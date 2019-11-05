@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Oct 22 16:27:10 2019
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : CSCE611_lab_regfile
+Top-level Entity Name : CSCE611_lab_regfile
+Family : Cyclone IV E
+Total logic elements : 1,307
+    Total combinational functions : 811
+    Dedicated logic registers : 517
+Total registers : 517
+Total pins : 108
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

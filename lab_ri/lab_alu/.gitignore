@@ -1,0 +1,15 @@
+*.rpt
+*.chg
+smart.log
+*.eqn
+*.pin
+*.sof
+*.pof
+db/
+*.done
+*.summary
+*.smsg
+incremental_db/
+work/
+*.wlf
+transcript

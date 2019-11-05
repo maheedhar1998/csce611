@@ -1,0 +1,47 @@
+/* RPN calculator module implementation */
+
+module rpncalc (
+
+/**** inputs *****************************************************************/
+
+	input [0:0 ] clk,		/* clock */
+	input [0:0 ] rst,		/* reset */
+	input [1:0 ] mode,		/* mode from SW17 and SW16 */
+	input [3:0 ] key,		/* value from KEYs */
+
+					/* Remember that the 2 bit mode and
+					 * 4 bit key value are used to
+					 * uniquely identify one of 16
+					 * operations. Also keep in mind that
+					 * they keys are onehot (i.e. only one
+					 * key is pressed at a time -- if
+					 * more than one key is pressed at a
+					 * time, the behavior is undefined
+					 * (i.e. you may choose your own
+					 * behavior). */
+
+	input [15:0] val,		/* 16 bit value from SW15...SW0 */
+
+/**** outputs ****************************************************************/
+
+	output [15:0] top,		/* 16 bit value at the top of the
+					 * stack, to be shown on HEX3...HEX0 */
+
+	output [15:0] next,		/* 16 bit value second-to-top in the
+					 * stack, to be shown on HEX7...HEX4 */
+
+	output [7:0] counter		/* counter value to show on LEDG */
+
+);
+
+/* your code here */
+
+/* don't forget to...
+ *
+ * - instantiate the register file
+ * - hard-code readaddr1 to address of the top of the stack
+ * - hard-code readaddr2 to the address of the next-to-top of the stack
+ *
+ */
+
+endmodule

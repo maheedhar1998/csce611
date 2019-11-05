@@ -1,0 +1,172 @@
+// test bitwise AND with non-zero output
+F_0F0F0F0F_FFFFFFFF_00_0_00000000_0F0F0F0F_0
+// test bitwise AND with all zero output
+F_0F0F0F0F_F0F0F0F0_00_0_00000000_00000000_1
+// test bitwise OR with non-zero output
+F_000000FF_0000FF00_00_1_00000000_0000FFFF_0
+// test bitwise OR with zero output
+F_00000000_00000000_00_1_00000000_00000000_1
+// test bitwise NOR with non-zero output
+F_00000000_0000000F_00_2_00000000_FFFFFFF0_0
+// test bitwise NOR with zero output
+F_F0F0F0F0_0F0F0F0F_00_2_00000000_00000000_1
+// test bitwise XOR with non-zero output
+F_F0000000_0000000F_00_3_00000000_F000000F_0
+// test bitwise XOR with zero output
+F_F0000000_F0000000_00_3_00000000_00000000_1
+// test add with a=0 b=0 and output=0
+F_00000000_00000000_00_4_00000000_00000000_1
+// test add with a=0 b=positive and output is positive
+F_00000000_00000FFF_00_4_00000000_00000FFF_0
+// test add with a=0 b=negative and output is negative
+F_00000000_800000FF_00_4_00000000_800000FF_0
+// test add with a=positive b=0 and output is posistve
+F_000FFFFF_00000000_00_4_00000000_000FFFFF_0
+// test add with a=positive b=positive and output is posistve
+F_000FFFFF_00F00000_00_4_00000000_00FFFFFF_0
+// test add with a=positive b=negative and output is posistve
+F_000FFFFF_FFFFFFFF_00_4_00000000_000FFFFE_0
+// test add with a=negative b=0 and output is negative
+F_8000000F_00000000_00_4_00000000_8000000F_0
+// test add with a=negative b=positive and output is positive
+F_FFFFFFFF_0000000F_00_4_00000000_0000000E_0
+// test add with a=negative b=neagtive and output is negative
+F_FFFFFFFF_FFFFFFFF_00_4_00000000_FFFFFFFE_0
+// test add with a=positive b=neagtive and output is negative
+F_00000001_FFFFFFFE_00_4_00000000_FFFFFFFF_0
+// test add with a=positive b=negative and output is 0
+F_00000001_FFFFFFFF_00_4_00000000_00000000_1
+// test add with a=negative b=positive and output is negative
+F_FFFFFFFE_00000001_00_4_00000000_FFFFFFFF_0
+// test add with a=negative b=positive and output is 0
+F_FFFFFFFF_00000001_00_4_00000000_00000000_1
+// test sub with a=0 b=0 and output is 0
+F_00000000_00000000_00_5_00000000_00000000_1
+// test sub with a=0 b=positive and output is negative
+F_00000000_00000001_00_5_00000000_FFFFFFFF_0
+// test sub with a=0 b=negative and output is positive
+F_00000000_FFFFFFFF_00_5_00000000_00000001_0
+// test sub with a=positive b=0 and output is positive
+F_00000001_00000000_00_5_00000000_00000001_0
+// test sub with a=positive b=positive and output is positive
+F_00000009_00000002_00_5_00000000_00000007_0
+// test sub with a=positive b=positive and output is negative
+F_00000002_00000009_00_5_00000000_FFFFFFF9_0
+// test sub with a=positive b=negative and output is positive
+F_00000002_FFFFFFFF_00_5_00000000_00000003_0
+// test sub with a=positive b=positive and output is 0
+F_00000002_00000002_00_5_00000000_00000000_1
+// test sub with a=negative b=0 and output is negative
+F_FFFFFFFF_00000000_00_5_00000000_FFFFFFFF_0
+// test sub with a=negative b=positive and output is negative
+F_FFFFFFFE_00000001_00_5_00000000_FFFFFFFD_0
+// test sub with a=negative b=negative and output is negative
+F_FFFFFFFE_FFFFFFFF_00_5_00000000_FFFFFFFF_0
+// test sub with a=negative b=negative and output is postive
+F_FFFFFFFE_FFFFFFFD_00_5_00000000_00000001_0
+// test sub with a=negative b=negative and output is 0
+F_FFFFFFFE_FFFFFFFE_00_5_00000000_00000000_1
+// test mult signed a=0 b=0 and output is 0
+F_00000000_00000000_00_6_00000000_00000000_1
+// test mult signed a=0 b>0 and output is 0
+F_00000000_00000001_00_6_00000000_00000000_1
+// test mult signed a=0 b<0 and output is 0
+F_00000000_FFFFFFFF_00_6_00000000_00000000_1
+// test mult signed a>0 b=0 and output is 0
+F_00000001_00000000_00_6_00000000_00000000_1
+// test mult signed a>0 b>0 and output is positive
+F_00000001_00000001_00_6_00000000_00000001_0
+// test mult signed a>0 b<0 and output is negative
+F_00000001_FFFFFFFF_00_6_FFFFFFFF_FFFFFFFF_0
+// test mult signed a<0 b=0 and output is 0
+F_FFFFFFFF_00000000_00_6_00000000_00000000_1
+// test mult signed a<0 b>0 and output is negative
+F_FFFFFFFF_00000001_00_6_FFFFFFFF_FFFFFFFF_0
+// test mult signed a<0 b<0 and output is positive
+F_FFFFFFFF_FFFFFFFF_00_6_00000000_00000001_0
+// test mult signed a=max b=max and output is max (64bit signed)
+F_7FFFFFFF_7FFFFFFF_00_6_3FFFFFFF_00000001_0
+// test mult signed a=min b=min and output is min(64bit signed)
+F_80000000_80000000_00_6_40000000_00000000_1
+// test mult signed a=min b=max and output is ...
+F_80000000_7FFFFFFF_00_6_C0000000_80000000_0
+// test mult signed a=max b=min and output is ...
+F_7FFFFFFF_80000000_00_6_C0000000_80000000_0
+// test mult unsigned a=0 b=0 and output is 0
+F_00000000_00000000_00_7_00000000_0000000_1
+// test mult unsigned a=0 b>0 and output is 0
+F_00000000_00000001_00_7_00000000_00000000_1
+// test mult unsigned a>0 b=0 and output is 0
+F_00000001_00000000_00_7_00000000_00000000_1
+// test mult unsigned a=max b=max and output is max(64bit)
+F_FFFFFFFF_FFFFFFFF_00_7_FFFFFFFE_00000001_0
+// test sll left side overflow
+F_00000000_F0000000_01_8_00000000_E0000000_0
+// test sll regular
+F_00000000_000FF000_02_8_00000000_003FC000_0
+// test sll minshift
+F_00000000_000FFF00_00_8_00000000_000FFF00_0
+// test sll maxshift
+F_00000000_000FFF01_1F_8_00000000_80000000_0
+// test srl right side overflow
+F_00000000_000000FF_01_9_00000000_0000007F_0
+// test srl regular
+F_00000000_000FF000_02_9_00000000_0003fc00_0
+// test srl minshift
+F_00000000_00FF0000_00_9_00000000_00FF0000_0
+// test srl maxshift
+F_00000000_00FF0000_1F_9_00000000_00000000_1
+// test sra positive right overflow
+F_00000000_000000FF_02_A_00000000_0000003F_0
+// test sra positive regular
+F_00000000_000FF000_02_A_00000000_0003FC00_0
+// test sra positive minshift
+F_00000000_000FF000_00_A_00000000_000FF000_0
+// test sra positive maxshift
+F_00000000_0F000000_1F_A_00000000_00000000_1
+// test sra negative right side overflow
+F_00000000_800000FF_02_A_00000000_E000003F_0
+// test sra negative regular
+F_00000000_800FF000_02_A_00000000_E003FC00_0
+// test sra negative minshfit
+F_00000000_80000000_00_A_00000000_80000000_0
+// test sra negative maxshift
+F_00000000_8FFFFFFF_1F_A_00000000_FFFFFFFF_0
+// test slt signed a<0 b<0 and a<b
+F_FFFFFFFE_FFFFFFFF_00_C_00000000_00000001_0
+// test slt signed a>0 b>0 and a<b
+F_00000001_00000002_00_C_00000000_00000001_0
+// test slt signed a<0 b>0 and a<b
+F_FFFFFFFF_00000001_00_C_00000000_00000001_0
+// test slt signed a=0 b>0 and a<b
+F_00000000_00000001_00_C_00000000_00000001_0
+// test slt signed a<0 b=0 and a<b
+F_FFFFFFFF_00000000_00_C_00000000_00000001_0
+// test slt signed a<0 b<0 and a>b
+F_FFFFFFFF_FFFFFFFE_00_C_00000000_00000000_1
+// test slt signed a>0 b<0 and a>b
+F_00000001_FFFFFFFF_00_C_00000000_00000000_1
+// test slt signed a>0 b>0 and a>b
+F_00000002_00000001_00_C_00000000_00000000_1
+// test slt signed a=0 b<0 and a>b
+F_00000000_FFFFFFFF_00_C_00000000_00000000_1
+// test slt signed a>0 b=0 and a>b
+F_00000002_00000000_00_C_00000000_00000000_1
+// test slt signed a<0 b<0 and a=b
+F_FFFFFFFF_FFFFFFFF_00_C_00000000_00000000_1
+// test slt signed a>0 b>0 and a=b
+F_00000001_00000001_00_C_00000000_00000000_1
+// test slt signed a=0 b=0 and a=b
+F_00000000_00000000_00_C_00000000_00000000_1
+// test slt unsigned a=0 b>0 and a<b
+F_00000000_00000001_00_D_00000000_00000001_0
+// test slt unsigned a>0 b>0 and a<b
+F_00000001_00000002_00_D_00000000_00000001_0
+// test slt unsigned a>0 b>0 and a>b
+F_00000002_00000001_00_D_00000000_00000000_1
+// test slt unsigned a>0 b=0 and a>b
+F_00000001_00000000_00_D_00000000_00000000_1
+// test slt unsigned a>0 b>0 and a=b
+F_00000001_00000001_00_D_00000000_00000000_1
+// test slt unsigned a=0 b=0 and a=b
+F_00000000_00000000_00_D_00000000_00000000_1

@@ -1,0 +1,172 @@
+# //  ModelSim SE-64 10.4b May 26 2015 Linux 4.15.0-52-generic
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# do scripts/test.tcl
+# ==== CSCE611 regfile LabTest Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
+# Start time: 22:09:42 on Oct 24,2019
+# vlog -reportprogress 300 -novopt CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
+# -- Compiling module CSCE611_lab_regfile
+# -- Compiling module alu
+# -- Compiling module cnt6
+# -- Compiling module hexdriver
+# -- Compiling module regfile
+# -- Compiling module rpncalc
+# -- Compiling module stack
+# -- Compiling module CSCE611_regfile_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_regfile
+# 	cnt6
+# 	CSCE611_regfile_testbench
+# End time: 22:09:42 on Oct 24,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ------ Load Design ------------------------------------------------------------
+# vsim -novopt work.CSCE611_regfile_testbench 
+# Start time: 22:09:42 on Oct 24,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.CSCE611_regfile_testbench
+# Loading work.rpncalc
+# Loading work.stack
+# Loading work.regfile
+# Loading work.alu
+# ** Warning: (vsim-3017) stack.sv(8): [TFMPC] - Too few port connections. Expected 9, found 8.
+#    Time: 0 ns  Iteration: 0  Instance: /CSCE611_regfile_testbench/abacus/dStack/stackregs File: regfile.sv
+# ** Warning: (vsim-3722) stack.sv(8): [TFMPC] - Missing connection for port 'rst'.
+# ------ Setup Waves ------------------------------------------------------------
+# ------ Simulate ---------------------------------------------------------------
+# xxxx, xxxx
+# 0000, xxxx
+# 0001, 0000
+# 0002, 0001
+# dead, 0002
+# b00b, dead
+# dead, 0002
+# 0001, 0000
+# 0000, 0000
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, deaf
+# dead, xxxx
+# 0001, 0000
+# 0000, 0000
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# dead, xxxx
+# 0001, 0000
+# 0000, 0000
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# dead, xxxx
+# dead, xxxx
+# 0001, 0000
+# 0000, 0000
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# dead, xxxx
+# 0001, 0000
+# 0000, 0000
+# 0000, 0000
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# xxxx, xxxx
+# dead, xxxx
+# 0001, 0000
+# 0000, 0000
+# xxxx, xxxx
+# xxxx, xxxx
+# ** Note: $stop    : testbench.sv(32)
+#    Time: 900 ns  Iteration: 0  Instance: /CSCE611_regfile_testbench
+# Break in Module CSCE611_regfile_testbench at testbench.sv line 32
+# .main_pane.transcript.interior.cs.body.t
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0 ns
+# 945 ns
+# ------ Done -------------------------------------------------------------------
+# Design compiled and simulated successfully! (hint: this does not mean
+# your design is functionally correct, only that it is syntactically 
+# valid Verilog).
+# 
+# HINT: you can run the simulation again without restarting modelsim using the
+# following command:
+# 
+# do ./scripts/test.tcl
+# End time: 01:32:42 on Oct 25,2019, Elapsed time: 3:23:00
+# Errors: 0, Warnings: 3

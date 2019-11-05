@@ -1,0 +1,196 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/acct/mandapam/csce611/lab_regfile
+valu
+Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z2 !s110 1571969382
+!i10b 1
+!s100 :fM3kJkVz2A:D>e;Ke8>90
+IATX3Le>z7z><k[k>la_;42
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 alu_sv_unit
+S1
+R0
+w1570049059
+8alu.sv
+Falu.sv
+L0 1
+Z4 OL;L;10.4b;61
+r1
+!s85 0
+31
+Z5 !s108 1571969382.000000
+Z6 !s107 testbench.sv|stack.sv|rpncalc.sv|regfile.sv|hexdriver.sv|cnt6.sv|alu.sv|CSCE611_lab_regfile.sv|
+Z7 !s90 -reportprogress|300|-novopt|CSCE611_lab_regfile.sv|alu.sv|cnt6.sv|hexdriver.sv|regfile.sv|rpncalc.sv|stack.sv|testbench.sv|
+!i113 1
+Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+vcnt6
+R1
+R2
+!i10b 1
+!s100 SdGTZJ_RY7>EZ2io1>oPj2
+IE^ZW994N^W4AgJ<F6ZBHI0
+R3
+!s105 cnt6_sv_unit
+S1
+R0
+w1570660731
+8cnt6.sv
+Fcnt6.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vCSCE611_lab_regfile
+R1
+R2
+!i10b 1
+!s100 lPljg?kalW]3MRfP8ed>>2
+I=6M=h<:[<ZLhm>hb42eXC0
+R3
+!s105 CSCE611_lab_regfile_sv_unit
+S1
+R0
+w1571697678
+8CSCE611_lab_regfile.sv
+FCSCE611_lab_regfile.sv
+L0 6
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@c@s@c@e611_lab_regfile
+vCSCE611_regfile_testbench
+R1
+R2
+!i10b 1
+!s100 67O;LbAAfda2US`GOn1UB2
+Ibb=3TZk`_]cHFF9RNNanF1
+R3
+!s105 testbench_sv_unit
+S1
+R0
+w1571860422
+8testbench.sv
+Ftestbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@c@s@c@e611_regfile_testbench
+vhexdriver
+R1
+R2
+!i10b 1
+!s100 YGOebFWfQ@Tg]L`f[g?m70
+Ihmbk=Y99_@=85XbCR1jnG2
+R3
+!s105 hexdriver_sv_unit
+S1
+R0
+w1568237454
+8hexdriver.sv
+Fhexdriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vregfile
+R1
+R2
+!i10b 1
+!s100 _@6ORI<9iaZJi;4_z7YO=0
+IQKidXIgz<BD^TTGf=G:911
+R3
+!s105 regfile_sv_unit
+S1
+R0
+w1571697182
+8regfile.sv
+Fregfile.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vrpncalc
+R1
+R2
+!i10b 1
+!s100 Y9iTHPcfODWo?M7gDmDce3
+IY6_JW^8Sh=U@FnQi2jAbH1
+R3
+!s105 rpncalc_sv_unit
+S1
+R0
+w1571866024
+8rpncalc.sv
+Frpncalc.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vstack
+R1
+R2
+!i10b 1
+!s100 fiWfBJj1el9HIWSIP?KFH2
+I<>INMKIVQCR<lADbdPddG0
+R3
+!s105 stack_sv_unit
+S1
+R0
+w1571969195
+8stack.sv
+Fstack.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
