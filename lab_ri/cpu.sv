@@ -50,5 +50,36 @@ module cpu (
 						.writedata(wrdat),
 						.readdata1(rdat1),
 						.readdata2(rdat2));
+	logic [31:0] instruction_yadh [4095:0];
+	logic [11:0] instr_count;
+	logic [31:0] instr_ex;
+	logic regwrite_WB,regwrite_EX;
+	logic [4:0] writeaddr_WB;
+	logic [31:0] lo_WB;
+	initial begin
+		$readmemh("instmem.dat",);
+		instr_count <= 12'b0;
+		instr_ex <= 32'b0;
+		regwrite_WB <= 1'b0;
+	end
+	always_ff @(posedge clk, posedge rst) begin
+		if(rst) begin
+			instr_count <= 12'b0;
+			instr_ex <= 32'b0;
+		end else if() begin
+			instr_count <= instr_count++;
+			instr_ex <= instruction_yadh[instr_count];
+		end
+	end
+	// pipeline registers
+	always_ff @(posedge clk,posedge rst) begin
+		if (rst) begin
+			regwrite_WB <= 1'b0;
+		end else begin
+			regwrite_WB <= regwrite_EX;
+			writeaddr_WB <= instruction_EX[15:11];
+			lo_WB <= lo_EX;
+		end
+	end
 	
 endmodule
