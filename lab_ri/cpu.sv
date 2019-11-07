@@ -10,7 +10,7 @@ module cpu (
 
 /**** outputs ****************************************************************/
 
-	output [31:0] gpio_out	/* GPIO output */
+	output logic [31:0] gpio_out	/* GPIO output */
 
 );
 
@@ -47,6 +47,7 @@ module cpu (
 	logic [1:0] regsel;
 	logic [5:0] funct;
 	logic [15:0] imm;
+	logic [0:0] gpio_we;
 	
 	// alu
 	alu ordenador(.a(a),
@@ -75,7 +76,7 @@ module cpu (
 			instr_count <= 12'b0;
 			instr_ex <= 32'b0;
 		end else begin
-			instr_count <= instr_count++;
+			instr_count <= instr_count + 12'b1;
 			instr_ex <= instruction_yadh[instr_count];
 		end
 	end
@@ -86,10 +87,11 @@ module cpu (
 		end else begin
 			regwrite_WB <= regwrite_EX;
 			writeaddr_WB <= rdrt;
+			if (gpio_we) gpio_out <= b;
 			if (regsel == 2'b00) wr_dat <= lo;
 			else if (regsel == 2'b01) wr_dat <= lo_instr;
 			else if (regsel == 2'b10) wr_dat <= hi_instr;
-			else write_data <= gpio_in;
+			else if (regsel == 2'b11) wr_dat <= gpio_in;
 		end
 	end
 	
@@ -183,7 +185,7 @@ module cpu (
 				alusrc = b;
 				regsel = 2'b00;
 			end else if (funct == 6'b000010 && shamt == 5'b0) begin //gpio write
-				gpio_out = 32'b0;
+				gpio_we = 1'b1;
 			end else if (funct == 6'b000011 && shamt != 5'b0) begin // sra
 				regwrite_EX = 1'b1;
 				op = 4'b1010;
@@ -191,6 +193,8 @@ module cpu (
 				alusrc = b;
 				regsel = 2'b00;
 			end else if (funct == 6'b000011 && shamt == 5'b0) begin //gpio read
+				rdrt = rt;
+				regwrite_EX = 1'b1;
 				regsel = 2'b11;
 			end else if (funct == 6'b101010) begin // slt
 				regwrite_EX = 1'b1;
