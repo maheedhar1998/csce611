@@ -4,7 +4,7 @@ module CSCE611_ri_testbench;
 	logic [31:0] gpio_in;
 	logic [31:0] gpio_out;
 	logic [31:0] gpio_exp;
-	logic [67:0] vectors [300:0];
+	logic [67:0] vectors [30:0];
 	logic [67:0] curr;
 	logic [19:0] i;
 	
@@ -19,7 +19,7 @@ module CSCE611_ri_testbench;
 	
 	initial begin
 		$readmemh("vectors.dat", vectors);
-		for(i=0; i<300; i++) begin
+		for(i=0; i<30; i++) begin
 			curr = vectors[i];
 			rst = curr[64];
 			gpio_in = curr[63:32];
