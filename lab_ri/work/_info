@@ -10,7 +10,7 @@ cModel Technology
 Z0 d/acct/mandapam/csce611/lab_ri
 valu
 Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1573096309
+Z2 !s110 1573172866
 !i10b 1
 !s100 :fM3kJkVz2A:D>e;Ke8>90
 IATX3Le>z7z><k[k>la_;42
@@ -26,7 +26,7 @@ Z5 OL;L;10.4b;61
 r1
 !s85 0
 31
-Z6 !s108 1573096309.000000
+Z6 !s108 1573172866.000000
 Z7 !s107 testbench.sv|regfile.sv|cpu.sv|alu.sv|CSCE611_lab_ri.sv|
 Z8 !s90 -reportprogress|300|-novopt|CSCE611_lab_ri.sv|alu.sv|cpu.sv|regfile.sv|testbench.sv|
 !i113 1
@@ -35,13 +35,13 @@ vcpu
 R1
 R2
 !i10b 1
-!s100 :M2Gk@chU^eZE]3k7`7Ie2
-IQ[3XdVLimiHIBDPi0Oa:V0
+!s100 OWc;Ol<GRL5]6IJW=ml_X2
+ImW20PR95FDRak:g_V^_^]0
 R3
 !s105 cpu_sv_unit
 S1
 R0
-w1573090688
+w1573172776
 8cpu.sv
 Fcpu.sv
 L0 3
@@ -82,13 +82,13 @@ vCSCE611_ri_testbench
 R1
 R2
 !i10b 1
-!s100 [c<MVzRo=gEQUm;Of7S>T2
-IzMKLSNBjo_;zI`RRU0]n[1
+!s100 j<J3i>a0P=IZGYWEZiFZW3
+IV]6FcQAI<RJ4X85<:M8A=0
 R3
 !s105 testbench_sv_unit
 S1
 R0
-w1573096291
+w1573168403
 8testbench.sv
 Ftestbench.sv
 L0 1

@@ -69,7 +69,7 @@ module cpu (
 						.readdata1(a),
 						.readdata2(b));
 	initial begin
-		$readmemh("instmem.dat", instruction_yadh);
+		$readmemh("testmipsInstr.dat", instruction_yadh);
 	end
 	always_ff @(posedge clk, posedge rst) begin
 		if(rst) begin
@@ -107,6 +107,7 @@ module cpu (
 	always_comb begin
 		regwrite_EX = 1'b0;		 // don't write a register
 		shamt = instr_ex[10:6]; // default shamt
+		gpio_we = 1'b0;
 		if(op_instr == 6'b000000) begin
 			if (funct == 6'b100000) begin // add
 				op = 4'b0100;
@@ -126,7 +127,7 @@ module cpu (
 				rdrt = rd;
 				alusrc = b;
 				regsel = 2'b00;
-			end else if (funct == 6'b100001) begin // subu
+			end else if (funct == 6'b100011) begin // subu
 				op = 4'b0101;
 				regwrite_EX = 1'b1;
 				rdrt = rd;

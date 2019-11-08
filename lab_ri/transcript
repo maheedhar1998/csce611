@@ -20,7 +20,7 @@
 # 
 # ------ Compile Verilog Files --------------------------------------------------
 # Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
-# Start time: 22:06:08 on Nov 06,2019
+# Start time: 19:27:46 on Nov 07,2019
 # vlog -reportprogress 300 -novopt CSCE611_lab_ri.sv alu.sv cpu.sv regfile.sv testbench.sv 
 # -- Compiling module CSCE611_lab_ri
 # -- Compiling module alu
@@ -31,11 +31,11 @@
 # Top level modules:
 # 	CSCE611_lab_ri
 # 	CSCE611_ri_testbench
-# End time: 22:06:08 on Nov 06,2019, Elapsed time: 0:00:00
+# End time: 19:27:46 on Nov 07,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ------ Load Design ------------------------------------------------------------
 # vsim -novopt work.CSCE611_ri_testbench 
-# Start time: 22:06:08 on Nov 06,2019
+# Start time: 19:27:46 on Nov 07,2019
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # Loading sv_std.std
 # Loading work.CSCE611_ri_testbench
@@ -44,8 +44,146 @@
 # Loading work.regfile
 # ------ Setup Waves ------------------------------------------------------------
 # ------ Simulate ---------------------------------------------------------------
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 604 of file "vectors.dat". (Current address [301], address range [0:300])    : testbench.sv(21)
-#    Time: 0 ns  Iteration: 0  Instance: /CSCE611_ri_testbench
+# out: xxxxxxxx, exp: 00000000, i: 00001
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000001, i: 00003
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000002, i: 00005
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000003, i: 00007
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000004, i: 00009
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000005, i: 0000b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000006, i: 0000d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000007, i: 0000f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000008, i: 00011
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000009, i: 00013
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000010, i: 00015
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000011, i: 00017
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000012, i: 00019
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000013, i: 0001b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000014, i: 0001d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000015, i: 0001f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000016, i: 00021
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000017, i: 00023
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000018, i: 00025
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000019, i: 00027
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000020, i: 00029
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000021, i: 0002b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000022, i: 0002d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000023, i: 0002f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000024, i: 00031
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000025, i: 00033
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000026, i: 00035
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000027, i: 00037
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000028, i: 00039
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000029, i: 0003b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000030, i: 0003d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000031, i: 0003f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000032, i: 00041
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000033, i: 00043
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000034, i: 00045
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000035, i: 00047
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000036, i: 00049
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000037, i: 0004b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000038, i: 0004d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000039, i: 0004f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000040, i: 00051
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000041, i: 00053
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000042, i: 00055
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000043, i: 00057
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000044, i: 00059
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000045, i: 0005b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000046, i: 0005d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000047, i: 0005f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000048, i: 00061
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000049, i: 00063
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000050, i: 00065
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000051, i: 00067
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000052, i: 00069
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000053, i: 0006b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000054, i: 0006d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000055, i: 0006f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000056, i: 00071
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000057, i: 00073
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000058, i: 00075
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000059, i: 00077
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000060, i: 00079
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000061, i: 0007b
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000062, i: 0007d
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000063, i: 0007f
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000064, i: 00081
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000065, i: 00083
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000066, i: 00085
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000067, i: 00087
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000068, i: 00089
+# Output Mismatch
+# out: xxxxxxxx, exp: 00000069, i: 0008b
+# Output Mismatch
 # .main_pane.transcript.interior.cs.body.t
 # .main_pane.wave.interior.cs.body.pw.wf
 # 0 ns
@@ -59,56 +197,5 @@
 # following command:
 # 
 # do ./scripts/test.tcl
-run -all
-run -all
-do scripts/test.tcl
-# ==== CSCE611 RI Lab Test Script ===============================================
-# 
-# TIP: you can run this test again without re-starting modelsim using the command
-# do scripts/test.tcl
-# 
-# ------ Compile Verilog Files --------------------------------------------------
-# Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
-# Start time: 22:11:49 on Nov 06,2019
-# vlog -reportprogress 300 -novopt CSCE611_lab_ri.sv alu.sv cpu.sv regfile.sv testbench.sv 
-# -- Compiling module CSCE611_lab_ri
-# -- Compiling module alu
-# -- Compiling module cpu
-# -- Compiling module regfile
-# -- Compiling module CSCE611_ri_testbench
-# 
-# Top level modules:
-# 	CSCE611_lab_ri
-# 	CSCE611_ri_testbench
-# End time: 22:11:49 on Nov 06,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# ------ Load Design ------------------------------------------------------------
-# End time: 22:11:50 on Nov 06,2019, Elapsed time: 0:05:42
-# Errors: 0, Warnings: 2
-# vsim -novopt work.CSCE611_ri_testbench 
-# Start time: 22:11:50 on Nov 06,2019
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# Loading sv_std.std
-# Loading work.CSCE611_ri_testbench
-# Loading work.cpu
-# Loading work.alu
-# Loading work.regfile
-# ------ Setup Waves ------------------------------------------------------------
-# ------ Simulate ---------------------------------------------------------------
-# ** Warning: (vsim-PLI-3407) Too many data words read on line 64 of file "vectors.dat". (Current address [31], address range [0:30])    : testbench.sv(21)
-#    Time: 0 ns  Iteration: 0  Instance: /CSCE611_ri_testbench
-# .main_pane.transcript.interior.cs.body.t
-# .main_pane.wave.interior.cs.body.pw.wf
-# 0 ns
-# 52500 ns
-# ------ Done -------------------------------------------------------------------
-# Design compiled and simulated successfully! (hint: this does not mean
-# your design is functionally correct, only that it is syntactically 
-# valid Verilog).
-# 
-# HINT: you can run the simulation again without restarting modelsim using the
-# following command:
-# 
-# do ./scripts/test.tcl
-# End time: 22:13:41 on Nov 06,2019, Elapsed time: 0:01:51
-# Errors: 0, Warnings: 2
+# End time: 19:28:38 on Nov 07,2019, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 1
