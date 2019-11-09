@@ -41,7 +41,9 @@ module CSCE611_lab_ri(
 //=======================================================
 //  Structural coding
 //=======================================================
-
-
-
+	logic [31:0] gin;
+	logic [31:0] gout;
+	assign gin = {14'b0,SW};
+	cpu ry3950x (.clk(CLOCK_50), .rst(KEY[0]), .gpio_in(gin), .gpio_out(gout));
+	
 endmodule
