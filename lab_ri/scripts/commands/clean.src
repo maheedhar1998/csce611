@@ -8,4 +8,3 @@ if [ $# -ge 1 ] ; then
 fi
 
 ./csce611.sh clean_sim
-./csce611.sh clean_hw
