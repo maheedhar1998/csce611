@@ -48,7 +48,7 @@ module cpu (
 	logic [5:0] funct;
 	logic [15:0] imm;
 	logic [0:0] gpio_we;
-	logic [0:0] stall_EX;
+	
 	// alu
 	alu ordenador(.a(a),
 						.b(alusrc),
