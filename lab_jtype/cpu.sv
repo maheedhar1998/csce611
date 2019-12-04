@@ -48,7 +48,9 @@ module cpu (
 	logic [5:0] funct;
 	logic [15:0] imm;
 	logic [0:0] gpio_we;
-	logic [0:0] stall_EX;
+	logic [0:0] stall_do; // stall_EX
+	logic [0:0] stall_get; // stall_FETCH
+	logic [1:0] pc_src_do;
 	// alu
 	alu ordenador(.a(a),
 						.b(alusrc),
@@ -76,8 +78,8 @@ module cpu (
 			instr_count <= 12'b0;
 			instr_ex <= 32'b0;
 		end else begin
-			instr_count <= instr_count + 12'b1;
 			instr_ex <= instruction_yadh[instr_count];
+			instr_count <= pc_src_do == 2'b0 ? instr_count + 12'b1 : instr_count + instr_ex[11:0];
 		end
 	end
 	// pipeline registers
@@ -95,6 +97,11 @@ module cpu (
 		end
 	end
 	
+	always_ff @(posedge clk, posedge rst) begin
+		if(rst) stall_do <= 1'b0; else stall_do <= stall_get;
+	end
+	
+	
 	// assigns
 	assign op_instr = instr_ex[31:26];
 	assign rs = instr_ex[25:21];
@@ -102,164 +109,185 @@ module cpu (
 	assign rd = instr_ex[15:11];
 	assign funct = instr_ex[5:0];
 	assign imm = instr_ex[15:0];
+	assign target = instr_ex[25:0];
 	
 	// control unit
 	always_comb begin
 		regwrite_EX = 1'b0;		 // don't write a register
 		shamt = instr_ex[10:6]; // default shamt
 		gpio_we = 1'b0;
-		if(op_instr == 6'b000000) begin
-			if (funct == 6'b100000) begin // add
-				op = 4'b0100;
+		stall_get = 1'b0;
+		pc_src_do = 2'b0;
+		if(~stall_do) begin
+			if(op_instr == 6'b000000) begin
+				if (funct == 6'b100000) begin // add
+					op = 4'b0100;
+					regwrite_EX = 1'b1;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b100001) begin // addu
+					op = 4'b0100;
+					regwrite_EX = 1'b1;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b100010) begin // sub
+					op = 4'b0101;
+					regwrite_EX = 1'b1;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b100011) begin // subu
+					op = 4'b0101;
+					regwrite_EX = 1'b1;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b011000) begin // mult
+					op = 4'b0110; 
+					alusrc = b;
+					hi_instr = hi;
+					lo_instr = lo;
+				end else if (funct == 6'b011001) begin // multu
+					op = 4'b0111; 
+					alusrc = b;
+					hi_instr = hi;
+					lo_instr = lo;
+				end else if (funct == 6'b100100) begin // AND
+					regwrite_EX = 1'b1;
+					op = 4'b0000;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b100101) begin // OR
+					regwrite_EX = 1'b1;
+					op = 4'b0001;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b100110) begin // XOR
+					regwrite_EX = 1'b1;
+					op = 4'b0011;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b100111) begin // NOR
+					regwrite_EX = 1'b1;
+					op = 4'b0010;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b000000 && shamt != 5'b0) begin // sll
+					regwrite_EX = 1'b1;
+					op = 4'b1000;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b000000 && shamt == 5'b0) begin // nop
+					regwrite_EX = 1'b0;
+					op = 4'b1000;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b000010 && shamt != 5'b0) begin // srl
+					regwrite_EX = 1'b1;
+					op = 4'b1001;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b000010 && shamt == 5'b0) begin //gpio write
+					gpio_we = 1'b1;
+				end else if (funct == 6'b000011 && shamt != 5'b0) begin // sra
+					regwrite_EX = 1'b1;
+					op = 4'b1010;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b000011 && shamt == 5'b0) begin //gpio read
+					rdrt = rt;
+					regwrite_EX = 1'b1;
+					regsel = 2'b11;
+				end else if (funct == 6'b101010) begin // slt
+					regwrite_EX = 1'b1;
+					op = 4'b1100;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b101011) begin // sltu
+					regwrite_EX = 1'b1;
+					op = 4'b1101;
+					rdrt = rd;
+					alusrc = b;
+					regsel = 2'b00;
+				end else if (funct == 6'b010000) begin // mfhi
+					regwrite_EX = 1'b1;
+					rdrt = rd;
+					regsel = 2'b10;
+				end else if (funct == 6'b010010) begin // mflo
+					regwrite_EX = 1'b1;
+					rdrt = rd;
+					regsel = 2'b01;
+				end else if (funct == 6'b001000) begin // jr
+					
+				end
+			end else if (op_instr == 6'b001111) begin // lui
 				regwrite_EX = 1'b1;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b100001) begin // addu
-				op = 4'b0100;
-				regwrite_EX = 1'b1;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b100010) begin // sub
-				op = 4'b0101;
-				regwrite_EX = 1'b1;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b100011) begin // subu
-				op = 4'b0101;
-				regwrite_EX = 1'b1;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b011000) begin // mult
-				op = 4'b0110; 
-				alusrc = b;
-				hi_instr = hi;
-				lo_instr = lo;
-			end else if (funct == 6'b011001) begin // multu
-				op = 4'b0111; 
-				alusrc = b;
-				hi_instr = hi;
-				lo_instr = lo;
-			end else if (funct == 6'b100100) begin // AND
-				regwrite_EX = 1'b1;
-				op = 4'b0000;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b100101) begin // OR
-				regwrite_EX = 1'b1;
-				op = 4'b0001;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b100110) begin // XOR
-				regwrite_EX = 1'b1;
-				op = 4'b0011;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b100111) begin // NOR
-				regwrite_EX = 1'b1;
-				op = 4'b0010;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b000000 && shamt != 5'b0) begin // sll
-				regwrite_EX = 1'b1;
-				op = 4'b1000;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b000000 && shamt == 5'b0) begin // nop
-				regwrite_EX = 1'b0;
-				op = 4'b1000;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b000010 && shamt != 5'b0) begin // srl
-				regwrite_EX = 1'b1;
-				op = 4'b1001;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b000010 && shamt == 5'b0) begin //gpio write
-				gpio_we = 1'b1;
-			end else if (funct == 6'b000011 && shamt != 5'b0) begin // sra
-				regwrite_EX = 1'b1;
-				op = 4'b1010;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b000011 && shamt == 5'b0) begin //gpio read
+				alusrc = {imm, 16'b0};
 				rdrt = rt;
+				op = 4'b0100;
+				regsel = 2'b00;
+			end else if (op_instr == 6'b001000) begin // addi
 				regwrite_EX = 1'b1;
-				regsel = 2'b11;
-			end else if (funct == 6'b101010) begin // slt
+				alusrc = {{16{imm[15]}},imm};
+				rdrt = rt;
+				op = 4'b0100;
+				regsel = 2'b00;
+			end else if (op_instr == 6'b001001) begin // addiu
 				regwrite_EX = 1'b1;
+				alusrc = {{16{imm[15]}},imm};
+				rdrt = rt;
+				op = 4'b0100;
+				regsel = 2'b00;
+			end else if (op_instr == 6'b001100) begin // ANDi
+				regwrite_EX = 1'b1;
+				alusrc = {16'b0, imm};
+				rdrt = rt;
+				op = 4'b0000;
+				regsel = 2'b00;
+			end else if (op_instr == 6'b001101) begin // ORi
+				regwrite_EX = 1'b1;
+				alusrc = {16'b0, imm};
+				rdrt = rt;
+				op = 4'b0001;
+				regsel = 2'b00;
+			end else if (op_instr == 6'b001110) begin // XORi
+				regwrite_EX = 1'b1;
+				alusrc = {16'b0, imm};
+				rdrt = rt;
+				op = 4'b0011;
+				regsel = 2'b00;
+			end else if (op_instr == 6'b001010) begin // slti
+				regwrite_EX = 1'b1;
+				alusrc = {{16{imm[15]}},imm};
+				rdrt = rt;
 				op = 4'b1100;
-				rdrt = rd;
-				alusrc = b;
 				regsel = 2'b00;
-			end else if (funct == 6'b101011) begin // sltu
-				regwrite_EX = 1'b1;
-				op = 4'b1101;
-				rdrt = rd;
-				alusrc = b;
-				regsel = 2'b00;
-			end else if (funct == 6'b010000) begin // mfhi
-				regwrite_EX = 1'b1;
-				rdrt = rd;
-				regsel = 2'b10;
-			end else if (funct == 6'b010010) begin // mflo
-				regwrite_EX = 1'b1;
-				rdrt = rd;
-				regsel = 2'b01;
-			end
-		end else if (op_instr == 6'b001111) begin // lui
-			regwrite_EX = 1'b1;
-			alusrc = {imm, 16'b0};
-			rdrt = rt;
-			op = 4'b0100;
-			regsel = 2'b00;
-		end else if (op_instr == 6'b001000) begin // addi
-			regwrite_EX = 1'b1;
-			alusrc = {{16{imm[15]}},imm};
-			rdrt = rt;
-			op = 4'b0100;
-			regsel = 2'b00;
-		end else if (op_instr == 6'b001001) begin // addiu
-			regwrite_EX = 1'b1;
-			alusrc = {{16{imm[15]}},imm};
-			rdrt = rt;
-			op = 4'b0100;
-			regsel = 2'b00;
-		end else if (op_instr == 6'b001100) begin // ANDi
-			regwrite_EX = 1'b1;
-			alusrc = {16'b0, imm};
-			rdrt = rt;
-			op = 4'b0000;
-			regsel = 2'b00;
-		end else if (op_instr == 6'b001101) begin // ORi
-			regwrite_EX = 1'b1;
-			alusrc = {16'b0, imm};
-			rdrt = rt;
-			op = 4'b0001;
-			regsel = 2'b00;
-		end else if (op_instr == 6'b001110) begin // XORi
-			regwrite_EX = 1'b1;
-			alusrc = {16'b0, imm};
-			rdrt = rt;
-			op = 4'b0011;
-			regsel = 2'b00;
-		end else if (op_instr == 6'b001010) begin // slti
-			regwrite_EX = 1'b1;
-			alusrc = {{16{imm[15]}},imm};
-			rdrt = rt;
-			op = 4'b1100;
-			regsel = 2'b00;
+			end else if (op_instr == 6'b000010) begin // j
+				
+			end else if (op_instr == 6'b000011) begin // jal
+				
+			end else if (op_instr == 6'b000101) begin // bne
+				op = 4'b0101;
+				if(~zero) begin
+					stall_get = 1'b1;
+					pc_src_do = 2'b1;
+				end
+			end else if (op_instr == 6'b000100) begin // beq
+				
+			end else if (op_instr == 6'b000001) begin // bgez
+				
+			end 
 		end
 	end
 endmodule

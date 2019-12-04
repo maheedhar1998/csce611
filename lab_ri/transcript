@@ -1,0 +1,61 @@
+# //  ModelSim SE-64 10.4b May 26 2015 Linux 4.15.0-52-generic
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# do scripts/test.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
+# Start time: 19:28:03 on Dec 01,2019
+# vlog -reportprogress 300 -novopt CSCE611_lab_ri.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_ri
+# -- Compiling module alu
+# -- Compiling module cpu
+# -- Compiling module regfile
+# -- Compiling module CSCE611_ri_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_ri
+# 	CSCE611_ri_testbench
+# End time: 19:28:03 on Dec 01,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ------ Load Design ------------------------------------------------------------
+# vsim -novopt work.CSCE611_ri_testbench 
+# Start time: 19:28:03 on Dec 01,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# Loading sv_std.std
+# Loading work.CSCE611_ri_testbench
+# Loading work.cpu
+# Loading work.alu
+# Loading work.regfile
+# ------ Setup Waves ------------------------------------------------------------
+# ------ Simulate ---------------------------------------------------------------
+# .main_pane.transcript.interior.cs.body.t
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0 ns
+# 52500 ns
+# ------ Done -------------------------------------------------------------------
+# Design compiled and simulated successfully! (hint: this does not mean
+# your design is functionally correct, only that it is syntactically 
+# valid Verilog).
+# 
+# HINT: you can run the simulation again without restarting modelsim using the
+# following command:
+# 
+# do ./scripts/test.tcl
+# End time: 19:31:02 on Dec 01,2019, Elapsed time: 0:02:59
+# Errors: 0, Warnings: 1
