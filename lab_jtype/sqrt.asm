@@ -7,6 +7,8 @@
   loop:
     mult $2,$2 # X^2
     mflo $5 # move from lo
+    mfhi $10 # move from hi
+    
     sub $6,$5,$4 # x^2-s (val)
     slt $7,$6,$zero # val<0
     bne $7,$zero,stepUp # if(val<0)

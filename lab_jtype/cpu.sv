@@ -289,7 +289,9 @@ module cpu (
 				regwrite_EX = 1'b1;
 				rdrt = 5'd31;
 				regsel = 2'b00;
-				alusrc = {{20{0}},instr_count+12'b1};
+				// $display("jal count 1: %d", instr_count);
+				alusrc = {{20{0}},instr_count};
+				// $display("jal count 2: %d", instr_count);
 				shamt = 5'b0;
 				op = 4'b1000;
 				stall_get = 1'b1;

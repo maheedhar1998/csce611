@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/maheedhar/csce611/lab_jtype
 valu
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1575577645
+Z2 !s110 1575582510
 !i10b 1
 !s100 4?zJM_AN470_V17KGdBn[2
 !s11b Sj:Z5>h3I6`lagaNk=95C0
@@ -27,7 +27,7 @@ Z5 OV;L;2019.2;69
 r1
 !s85 0
 31
-Z6 !s108 1575577645.000000
+Z6 !s108 1575582510.000000
 !s107 testbench.sv|regfile.sv|cpu.sv|alu.sv|CSCE611_lab_jtype.sv|
 Z7 !s90 -reportprogress|300|CSCE611_lab_jtype.sv|alu.sv|cpu.sv|regfile.sv|testbench.sv|
 !i113 1
@@ -36,13 +36,13 @@ vcpu
 R1
 R2
 !i10b 1
-!s100 Z_Rg=PRBBKlz:HIAcSHQC0
-!s11b =U:?5FCEh<5_9OA3XIPli2
-Il<SY^ZRZ^`SN7nkLTf^P42
+!s100 KXkGQ:b4S9R4jUDkg:2Hk0
+!s11b <Wk_d[ZAigfSY]_[ZfoAS0
+I3g@>ao?2<KE^E`GX7Ofen3
 R3
 S1
 R0
-w1575577565
+w1575582506
 8cpu.sv
 Fcpu.sv
 L0 3
