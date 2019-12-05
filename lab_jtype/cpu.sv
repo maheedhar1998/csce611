@@ -51,6 +51,7 @@ module cpu (
 	logic [0:0] stall_do; // stall_EX
 	logic [0:0] stall_get; // stall_FETCH
 	logic [1:0] pc_src_do;
+	logic [0:0] stall_instr;
 	// alu
 	alu ordenador(.a(a),
 						.b(alusrc),
@@ -71,7 +72,7 @@ module cpu (
 						.readdata1(a),
 						.readdata2(b));
 	initial begin
-		$readmemh("testmipsInstr.dat", instruction_yadh);
+		$readmemh("test.dat", instruction_yadh);
 	end
 	always_ff @(posedge clk, posedge rst) begin
 		if(rst) begin
@@ -79,7 +80,12 @@ module cpu (
 			instr_ex <= 32'b0;
 		end else begin
 			instr_ex <= instruction_yadh[instr_count];
-			instr_count <= pc_src_do == 2'b0 ? instr_count + 12'b1 : instr_count + instr_ex[11:0];
+			if (stall_instr) instr_count <= instr_count - 12'b1;
+			if (pc_src_do == 2'b00) instr_count <= instr_count + 12'b1;
+			else if (pc_src_do == 2'b01) instr_count <= instr_count + instr_ex[11:0];
+			else if (pc_src_do == 2'b10) instr_count <= a[11:0];
+			else if (pc_src_do == 2'b11) instr_count <= instr_ex[11:0];
+			$display("instr count: %d, instr: %b, instr offset: %d", instr_count, pc_src_do, stall_instr);
 		end
 	end
 	// pipeline registers
@@ -97,9 +103,6 @@ module cpu (
 		end
 	end
 	
-	always_ff @(posedge clk, posedge rst) begin
-		if(rst) stall_do <= 1'b0; else stall_do <= stall_get;
-	end
 	
 	
 	// assigns
@@ -118,6 +121,8 @@ module cpu (
 		gpio_we = 1'b0;
 		stall_get = 1'b0;
 		pc_src_do = 2'b0;
+		stall_do = 1'b0;
+		stall_instr = 1'b0;
 		if(~stall_do) begin
 			if(op_instr == 6'b000000) begin
 				if (funct == 6'b100000) begin // add
@@ -229,7 +234,8 @@ module cpu (
 					rdrt = rd;
 					regsel = 2'b01;
 				end else if (funct == 6'b001000) begin // jr
-					
+					stall_do = 1'b1;
+					pc_src_do = 2'b10;
 				end
 			end else if (op_instr == 6'b001111) begin // lui
 				regwrite_EX = 1'b1;
@@ -274,20 +280,41 @@ module cpu (
 				op = 4'b1100;
 				regsel = 2'b00;
 			end else if (op_instr == 6'b000010) begin // j
-				
+				stall_do = 1'b1;
+				pc_src_do = 2'b11;
 			end else if (op_instr == 6'b000011) begin // jal
-				
+				regwrite_EX = 1'b1;
+				rdrt = 5'd31;
+				regsel = 2'b00;
+				alusrc = {{20{0}},instr_count+12'b1};
+				shamt = 5'b0;
+				op = 4'b1000;
+				stall_do = 1'b1;
+				pc_src_do = 2'b11;
 			end else if (op_instr == 6'b000101) begin // bne
-				op = 4'b0101;
+				op = 4'b0101; // sub
+				alusrc = b;
 				if(~zero) begin
-					stall_get = 1'b1;
-					pc_src_do = 2'b1;
+					stall_do = 1'b1;
+					pc_src_do = 2'b01;
 				end
 			end else if (op_instr == 6'b000100) begin // beq
-				
+				op = 4'b0101; // sub
+				alusrc = b;
+				if(zero) begin
+					stall_do = 1'b1;
+					pc_src_do = 2'b01;
+				end
 			end else if (op_instr == 6'b000001) begin // bgez
-				
+				op = 4'b1100;
+				alusrc = 32'b0;
+				if(zero) begin
+					stall_do = 1'b1;
+					pc_src_do = 2'b01;
+				end
 			end 
+		end else if (stall_do) begin
+			stall_instr = 1'b1;
 		end
 	end
 endmodule
