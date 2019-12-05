@@ -25,7 +25,7 @@ module CSCE611_jtype_testbench;
 			gpio_in = curr[63:32];
 			gpio_exp = curr[31:0];
 			if(~rst) begin
-			   #700;
+			   #1000;
 			end else if (rst) begin
 				#10;
 			end

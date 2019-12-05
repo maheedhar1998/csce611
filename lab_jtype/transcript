@@ -1,17 +1,3 @@
-# //  ModelSim SE-64 10.4b May 26 2015 Linux 4.15.0-52-generic
-# //
-# //  Copyright 1991-2015 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
-# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
-# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
-# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
-# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
-# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
-# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
-# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
-# //
 # do scripts/test.tcl
 # ==== CSCE611 RI Lab Test Script ===============================================
 # 
@@ -19,144 +5,113 @@
 # do scripts/test.tcl
 # 
 # ------ Compile Verilog Files --------------------------------------------------
-# Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
-# Start time: 18:09:17 on Dec 04,2019
-# vlog -reportprogress 300 -novopt CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
-# -- Compiling module CSCE611_lab_jtype
-# -- Compiling module alu
-# -- Compiling module cpu
-# -- Compiling module regfile
-# -- Compiling module CSCE611_jtype_testbench
-# 
-# Top level modules:
-# 	CSCE611_lab_jtype
-# 	CSCE611_jtype_testbench
-# End time: 18:09:18 on Dec 04,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# ------ Load Design ------------------------------------------------------------
-# vsim -novopt work.CSCE611_jtype_testbench 
-# Start time: 18:09:18 on Dec 04,2019
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
-# Loading sv_std.std
-# Loading work.CSCE611_jtype_testbench
-# Loading work.cpu
-# Loading work.alu
-# Loading work.regfile
-# ------ Setup Waves ------------------------------------------------------------
-# ------ Simulate ---------------------------------------------------------------
-# instr count:    0, instr: 00, instr offset:    0
-# instr count:    1, instr: 00, instr offset:    1
-# instr count:    2, instr: 00, instr offset:    2
-# instr count:    3, instr: 00, instr offset:    4
-# instr count:    4, instr: 01, instr offset:    4
-# instr count:    8, instr: 01, instr offset:    4
-# instr count:   12, instr: 11, instr offset:    4
-# instr count:    4, instr: 00, instr offset:    x
-# instr count:    5, instr: 01, instr offset:    4
-# instr count:    9, instr: 11, instr offset:   10
-# instr count:   10, instr: 11, instr offset:    5
-# instr count:    5, instr: 10, instr offset:    8
-# instr count:   10, instr: 11, instr offset:   10
-# instr count:   10, instr: 10, instr offset:    8
-# instr count:   11, instr: 10, instr offset:    8
-# instr count:   11, instr: 00, instr offset:    x
-# instr count:   12, instr: 00, instr offset:    x
-# instr count:   13, instr: 00, instr offset:    x
-# instr count:   14, instr: 00, instr offset:    x
-# instr count:   15, instr: 00, instr offset:    x
-# instr count:   16, instr: 00, instr offset:    x
-# instr count:   17, instr: 00, instr offset:    x
-# instr count:   18, instr: 00, instr offset:    x
-# instr count:   19, instr: 00, instr offset:    x
-# instr count:   20, instr: 00, instr offset:    x
-# instr count:   21, instr: 00, instr offset:    x
-# instr count:   22, instr: 00, instr offset:    x
-# instr count:   23, instr: 00, instr offset:    x
-# instr count:   24, instr: 00, instr offset:    x
-# instr count:   25, instr: 00, instr offset:    x
-# instr count:   26, instr: 00, instr offset:    x
-# instr count:   27, instr: 00, instr offset:    x
-# instr count:   28, instr: 00, instr offset:    x
-# instr count:   29, instr: 00, instr offset:    x
-# instr count:   30, instr: 00, instr offset:    x
-# instr count:   31, instr: 00, instr offset:    x
-# instr count:   32, instr: 00, instr offset:    x
-# instr count:   33, instr: 00, instr offset:    x
-# instr count:   34, instr: 00, instr offset:    x
-# instr count:   35, instr: 00, instr offset:    x
-# instr count:   36, instr: 00, instr offset:    x
-# instr count:   37, instr: 00, instr offset:    x
-# instr count:   38, instr: 00, instr offset:    x
-# instr count:   39, instr: 00, instr offset:    x
-# instr count:   40, instr: 00, instr offset:    x
-# instr count:   41, instr: 00, instr offset:    x
-# instr count:   42, instr: 00, instr offset:    x
-# instr count:   43, instr: 00, instr offset:    x
-# instr count:   44, instr: 00, instr offset:    x
-# instr count:   45, instr: 00, instr offset:    x
-# instr count:   46, instr: 00, instr offset:    x
-# instr count:   47, instr: 00, instr offset:    x
-# instr count:   48, instr: 00, instr offset:    x
-# instr count:   49, instr: 00, instr offset:    x
-# instr count:   50, instr: 00, instr offset:    x
-# instr count:   51, instr: 00, instr offset:    x
-# instr count:   52, instr: 00, instr offset:    x
-# instr count:   53, instr: 00, instr offset:    x
-# instr count:   54, instr: 00, instr offset:    x
-# instr count:   55, instr: 00, instr offset:    x
-# instr count:   56, instr: 00, instr offset:    x
-# instr count:   57, instr: 00, instr offset:    x
-# instr count:   58, instr: 00, instr offset:    x
-# instr count:   59, instr: 00, instr offset:    x
-# instr count:   60, instr: 00, instr offset:    x
-# instr count:   61, instr: 00, instr offset:    x
-# instr count:   62, instr: 00, instr offset:    x
-# instr count:   63, instr: 00, instr offset:    x
-# instr count:   64, instr: 00, instr offset:    x
-# instr count:   65, instr: 00, instr offset:    x
-# ** Note: $stop    : testbench.sv(33)
-#    Time: 710 ns  Iteration: 0  Instance: /CSCE611_jtype_testbench
-# Break in Module CSCE611_jtype_testbench at testbench.sv line 33
-# .main_pane.transcript.interior.cs.body.t
-# .main_pane.wave.interior.cs.body.pw.wf
-# 0 ns
-# 746 ns
-# ------ Done -------------------------------------------------------------------
-# Design compiled and simulated successfully! (hint: this does not mean
-# your design is functionally correct, only that it is syntactically 
-# valid Verilog).
-# 
-# HINT: you can run the simulation again without restarting modelsim using the
-# following command:
-# 
-# do ./scripts/test.tcl
-do scripts/test.tcl
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# Errors: 1, Warnings: 0
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./scripts/test.tcl line 8
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -novopt *.sv"
+do ../test
+# Cannot open macro file: ../test
+do ../test_laptop.tcl
 # ==== CSCE611 RI Lab Test Script ===============================================
 # 
 # TIP: you can run this test again without re-starting modelsim using the command
 # do scripts/test.tcl
 # 
 # ------ Compile Verilog Files --------------------------------------------------
-# Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
-# Start time: 18:11:29 on Dec 04,2019
-# vlog -reportprogress 300 -novopt CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 14:41:01 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
 # -- Compiling module CSCE611_lab_jtype
 # -- Compiling module alu
 # -- Compiling module cpu
+# ** Warning: cpu.sv(289): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
 # -- Compiling module regfile
 # -- Compiling module CSCE611_jtype_testbench
 # 
 # Top level modules:
 # 	CSCE611_lab_jtype
 # 	CSCE611_jtype_testbench
-# End time: 18:11:29 on Dec 04,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# ------ Load Design ------------------------------------------------------------
-# End time: 18:11:29 on Dec 04,2019, Elapsed time: 0:02:11
+# End time: 14:41:01 on Dec 05,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
-# vsim -novopt work.CSCE611_jtype_testbench 
-# Start time: 18:11:29 on Dec 04,2019
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# ------ Load Design ------------------------------------------------------------
+# vsim work.CSCE611_ri_testbench 
+# Start time: 14:41:01 on Dec 05,2019
+# ** Error: (vsim-3170) Could not find 'CSCE611_ri_testbench'.
+#         Searched libraries:
+#             /home/maheedhar/csce611/lab_jtype/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./../test_laptop.tcl PAUSED at line 11
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 14:41:51 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_jtype
+# -- Compiling module alu
+# -- Compiling module cpu
+# ** Warning: cpu.sv(289): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# -- Compiling module regfile
+# -- Compiling module CSCE611_jtype_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_jtype
+# 	CSCE611_jtype_testbench
+# End time: 14:41:51 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# ------ Load Design ------------------------------------------------------------
+# vsim work.CSCE611_jtype_testbench 
+# Start time: 14:41:01 on Dec 05,2019
+# Loading sv_std.std
+# Loading work.CSCE611_jtype_testbench
+# Loading work.cpu
+# Loading work.alu
+# Loading work.regfile
+# ------ Setup Waves ------------------------------------------------------------
+# ** Error: (vish-4014) No objects found matching '/CSCE611_ri_testbench/*'.
+# Error in macro ./../test_laptop.tcl line 13
+# (vish-4014) No objects found matching '/CSCE611_ri_testbench/*'.
+#     while executing
+# "add wave -r /CSCE611_ri_testbench/*"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 14:43:00 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_jtype
+# -- Compiling module alu
+# -- Compiling module cpu
+# ** Warning: cpu.sv(289): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# -- Compiling module regfile
+# -- Compiling module CSCE611_jtype_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_jtype
+# 	CSCE611_jtype_testbench
+# End time: 14:43:01 on Dec 05,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# ------ Load Design ------------------------------------------------------------
+# End time: 14:43:02 on Dec 05,2019, Elapsed time: 0:02:01
+# Errors: 4, Warnings: 1
+# vsim work.CSCE611_jtype_testbench 
+# Start time: 14:43:02 on Dec 05,2019
 # Loading sv_std.std
 # Loading work.CSCE611_jtype_testbench
 # Loading work.cpu
@@ -164,6 +119,16 @@ do scripts/test.tcl
 # Loading work.regfile
 # ------ Setup Waves ------------------------------------------------------------
 # ------ Simulate ---------------------------------------------------------------
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_compat.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_nis.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnsl.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
 # instr count:    0, instr: 00, instr offset: 0
 # instr count:    1, instr: 00, instr offset: 0
 # instr count:    2, instr: 00, instr offset: 0
@@ -235,12 +200,12 @@ do scripts/test.tcl
 # instr count:   64, instr: 00, instr offset: 0
 # instr count:   65, instr: 00, instr offset: 0
 # ** Note: $stop    : testbench.sv(33)
-#    Time: 710 ns  Iteration: 0  Instance: /CSCE611_jtype_testbench
+#    Time: 710 ps  Iteration: 0  Instance: /CSCE611_jtype_testbench
 # Break in Module CSCE611_jtype_testbench at testbench.sv line 33
 # .main_pane.transcript.interior.cs.body.t
 # .main_pane.wave.interior.cs.body.pw.wf
-# 0 ns
-# 746 ns
+# 0 ps
+# 746 ps
 # ------ Done -------------------------------------------------------------------
 # Design compiled and simulated successfully! (hint: this does not mean
 # your design is functionally correct, only that it is syntactically 
@@ -250,5 +215,711 @@ do scripts/test.tcl
 # following command:
 # 
 # do ./scripts/test.tcl
-# End time: 20:22:38 on Dec 04,2019, Elapsed time: 2:11:09
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 14:45:40 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_jtype
+# -- Compiling module alu
+# -- Compiling module cpu
+# ** Warning: cpu.sv(290): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# -- Compiling module regfile
+# -- Compiling module CSCE611_jtype_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_jtype
+# 	CSCE611_jtype_testbench
+# End time: 14:45:40 on Dec 05,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
+# ------ Load Design ------------------------------------------------------------
+# End time: 14:45:42 on Dec 05,2019, Elapsed time: 0:02:40
+# Errors: 1, Warnings: 11
+# vsim work.CSCE611_jtype_testbench 
+# Start time: 14:45:42 on Dec 05,2019
+# Loading sv_std.std
+# Loading work.CSCE611_jtype_testbench
+# Loading work.cpu
+# Loading work.alu
+# Loading work.regfile
+# ------ Setup Waves ------------------------------------------------------------
+# ------ Simulate ---------------------------------------------------------------
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_compat.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_nis.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnsl.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# instr: xxxxxxxx
+# instr: 00000000
+# instr: 00000000
+# instr count:    0, instr: 00, instr offset: 0
+# instr: 24040001
+# instr: 24040001
+# instr count:    1, instr: 00, instr offset: 0
+# instr: 24050002
+# instr: 24050002
+# instr count:    2, instr: 00, instr offset: 0
+# instr: 10850004
+# instr: 10850004
+# instr: 10850004
+# instr count:    3, instr: 00, instr offset: 0
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr: 04810004
+# instr: 04810004
+# instr count:    8, instr: 01, instr offset: 0
+# instr: 08100004
+# instr count:   12, instr: 11, instr offset: 0
+# instr: xxxxxxxx
+# instr count:    4, instr: 00, instr offset: 0
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    9, instr: 11, instr offset: 0
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr: 03e00008
+# instr count:    5, instr: 10, instr offset: 0
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:   10, instr: 11, instr offset: 0
+# instr: 03e00008
+# instr count:   10, instr: 10, instr offset: 0
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr: xxxxxxxx
+# instr: xxxxxxxx
+# instr count:   11, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   12, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   13, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   14, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   15, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   16, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   17, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   18, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   19, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   20, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   21, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   22, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   23, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   24, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   25, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   26, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   27, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   28, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   29, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   30, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   31, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   32, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   33, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   34, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   35, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   36, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   37, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   38, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   39, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   40, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   41, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   42, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   43, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   44, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   45, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   46, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   47, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   48, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   49, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   50, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   51, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   52, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   53, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   54, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   55, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   56, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   57, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   58, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   59, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   60, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   61, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   62, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   63, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   64, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# instr count:   65, instr: 00, instr offset: 0
+# instr: xxxxxxxx
+# ** Note: $stop    : testbench.sv(33)
+#    Time: 710 ps  Iteration: 0  Instance: /CSCE611_jtype_testbench
+# Break in Module CSCE611_jtype_testbench at testbench.sv line 33
+# .main_pane.transcript.interior.cs.body.t
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0 ps
+# 746 ps
+# ------ Done -------------------------------------------------------------------
+# Design compiled and simulated successfully! (hint: this does not mean
+# your design is functionally correct, only that it is syntactically 
+# valid Verilog).
+# 
+# HINT: you can run the simulation again without restarting modelsim using the
+# following command:
+# 
+# do ./scripts/test.tcl
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:01:39 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_jtype
+# -- Compiling module alu
+# -- Compiling module cpu
+# ** Error (suppressible): cpu.sv(124): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Error (suppressible): cpu.sv(126): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Error (suppressible): cpu.sv(240): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Error (suppressible): cpu.sv(286): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Warning: cpu.sv(292): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Error (suppressible): cpu.sv(295): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Error (suppressible): cpu.sv(301): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Error (suppressible): cpu.sv(308): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# ** Error (suppressible): cpu.sv(315): (vlog-7033) Variable 'stall_get' driven in a combinational block, may not be driven by any other process. See cpu.sv(107).
+# -- Compiling module regfile
+# -- Compiling module CSCE611_jtype_testbench
+# End time: 15:01:39 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 1
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./../test_laptop.tcl line 9
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog *.sv"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:26:25 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_jtype
+# -- Compiling module alu
+# -- Compiling module cpu
+# ** Warning: cpu.sv(292): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# -- Compiling module regfile
+# -- Compiling module CSCE611_jtype_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_jtype
+# 	CSCE611_jtype_testbench
+# End time: 15:26:25 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# ------ Load Design ------------------------------------------------------------
+# End time: 15:26:25 on Dec 05,2019, Elapsed time: 0:40:43
+# Errors: 3, Warnings: 12
+# vsim work.CSCE611_jtype_testbench 
+# Start time: 15:26:25 on Dec 05,2019
+# Loading sv_std.std
+# Loading work.CSCE611_jtype_testbench
+# Loading work.cpu
+# Loading work.alu
+# Loading work.regfile
+# ------ Setup Waves ------------------------------------------------------------
+# ------ Simulate ---------------------------------------------------------------
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_compat.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_nis.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnsl.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# instr: 00000000
+# instr: 00000000
+# instr count:    0, instr: 00, instr offset: 0
+# instr: 24040001
+# instr: 24040001
+# instr count:    1, instr: 00, instr offset: 0
+# instr: 24050002
+# instr: 24050002
+# instr count:    2, instr: 00, instr offset: 0
+# instr: 10850004
+# instr: 10850004
+# instr: 10850004
+# instr count:    3, instr: 00, instr offset: 0
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# ** Note: $stop    : testbench.sv(33)
+#    Time: 710 ps  Iteration: 0  Instance: /CSCE611_jtype_testbench
+# Break in Module CSCE611_jtype_testbench at testbench.sv line 33
+# .main_pane.transcript.interior.cs.body.t
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0 ps
+# 746 ps
+# ------ Done -------------------------------------------------------------------
+# Design compiled and simulated successfully! (hint: this does not mean
+# your design is functionally correct, only that it is syntactically 
+# valid Verilog).
+# 
+# HINT: you can run the simulation again without restarting modelsim using the
+# following command:
+# 
+# do ./scripts/test.tcl
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:27:25 on Dec 05,2019
+# vlog -reportprogress 300 CSCE611_lab_jtype.sv alu.sv cpu.sv regfile.sv testbench.sv 
+# -- Compiling module CSCE611_lab_jtype
+# -- Compiling module alu
+# -- Compiling module cpu
+# ** Warning: cpu.sv(292): (vlog-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# -- Compiling module regfile
+# -- Compiling module CSCE611_jtype_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_jtype
+# 	CSCE611_jtype_testbench
+# End time: 15:27:25 on Dec 05,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# ------ Load Design ------------------------------------------------------------
+# End time: 15:27:32 on Dec 05,2019, Elapsed time: 0:01:07
+# Errors: 1, Warnings: 11
+# vsim work.CSCE611_jtype_testbench 
+# Start time: 15:27:32 on Dec 05,2019
+# Loading sv_std.std
+# Loading work.CSCE611_jtype_testbench
+# Loading work.cpu
+# Loading work.alu
+# Loading work.regfile
+# ------ Setup Waves ------------------------------------------------------------
+# ------ Simulate ---------------------------------------------------------------
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_compat.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_nis.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnsl.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# instr: 00000000
+# instr: 00000000
+# instr count:    0, instr: 00, instr offset: 0
+# instr: 24040001
+# instr: 24040001
+# instr count:    1, instr: 00, instr offset: 0
+# instr: 24050002
+# instr: 24050002
+# instr count:    2, instr: 00, instr offset: 0
+# instr: 10850004
+# instr: 10850004
+# instr: 10850004
+# instr count:    3, instr: 00, instr offset: 0
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# instr count:    8, instr: 11, instr offset: 0
+# instr count:    3, instr: 00, instr offset: 1
+# instr: 14850004
+# instr: 14850004
+# instr count:    4, instr: 01, instr offset: 0
+# instr count:    8, instr: 00, instr offset: 1
+# instr: 08100004
+# instr: 08100004
+# instr count:    9, instr: 11, instr offset: 0
+# instr count:    4, instr: 00, instr offset: 1
+# instr: 04810004
+# instr: 04810004
+# instr: 04810004
+# instr count:    5, instr: 01, instr offset: 0
+# instr count:    9, instr: 00, instr offset: 1
+# instr: 08100005
+# instr count:   10, instr: 11, instr offset: 0
+# instr count:    5, instr: 00, instr offset: 1
+# instr: 0c10000a
+# instr: 0c10000a
+# instr count:    6, instr: 11, instr offset: 0
+# instr count:   10, instr: 00, instr offset: 1
+# instr: 03e00008
+# instr count:   11, instr: 10, instr offset: 0
+# instr count:    7, instr: 00, instr offset: 1
+# instr: 08100003
+# instr: 08100003
+# ** Note: $stop    : testbench.sv(33)
+#    Time: 1010 ps  Iteration: 0  Instance: /CSCE611_jtype_testbench
+# Break in Module CSCE611_jtype_testbench at testbench.sv line 33
+# .main_pane.transcript.interior.cs.body.t
+# .main_pane.wave.interior.cs.body.pw.wf
+# 0 ps
+# 1061 ps
+# ------ Done -------------------------------------------------------------------
+# Design compiled and simulated successfully! (hint: this does not mean
+# your design is functionally correct, only that it is syntactically 
+# valid Verilog).
+# 
+# HINT: you can run the simulation again without restarting modelsim using the
+# following command:
+# 
+# do ./scripts/test.tcl
+# End time: 16:01:30 on Dec 05,2019, Elapsed time: 0:33:58
+# Errors: 1, Warnings: 10

@@ -1,56 +1,57 @@
 m255
 K4
 z2
+!s11f vlog 2019.2 2019.04, Apr 17 2019
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/acct/mandapam/csce611/lab_jtype
+Z0 d/home/maheedhar/csce611/lab_jtype
 valu
-Z1 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z2 !s110 1575501089
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1575577645
 !i10b 1
-!s100 :fM3kJkVz2A:D>e;Ke8>90
-IATX3Le>z7z><k[k>la_;42
+!s100 4?zJM_AN470_V17KGdBn[2
+!s11b Sj:Z5>h3I6`lagaNk=95C0
+IXj4hbIaOF?o=ho140Na_32
 Z3 VDg1SIo80bB@j0V0VzS_@n1
-!s105 alu_sv_unit
 S1
 R0
-w1573066233
+Z4 w1575574707
 8alu.sv
 Falu.sv
 L0 1
-Z4 OL;L;10.4b;61
+Z5 OV;L;2019.2;69
 r1
 !s85 0
 31
-Z5 !s108 1575501089.000000
-Z6 !s107 testbench.sv|regfile.sv|cpu.sv|alu.sv|CSCE611_lab_jtype.sv|
-Z7 !s90 -reportprogress|300|-novopt|CSCE611_lab_jtype.sv|alu.sv|cpu.sv|regfile.sv|testbench.sv|
+Z6 !s108 1575577645.000000
+!s107 testbench.sv|regfile.sv|cpu.sv|alu.sv|CSCE611_lab_jtype.sv|
+Z7 !s90 -reportprogress|300|CSCE611_lab_jtype.sv|alu.sv|cpu.sv|regfile.sv|testbench.sv|
 !i113 1
-Z8 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
 vcpu
 R1
 R2
 !i10b 1
-!s100 h_f2g^m_g^oL:[@@<S5OD1
-IbB8cZmjD;BNX<I_R`i_aY0
+!s100 Z_Rg=PRBBKlz:HIAcSHQC0
+!s11b =U:?5FCEh<5_9OA3XIPli2
+Il<SY^ZRZ^`SN7nkLTf^P42
 R3
-!s105 cpu_sv_unit
 S1
 R0
-w1575501083
+w1575577565
 8cpu.sv
 Fcpu.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R5
 R6
+Z9 !s107 testbench.sv|regfile.sv|cpu.sv|alu.sv|CSCE611_lab_jtype.sv|
 R7
 !i113 1
 R8
@@ -58,22 +59,22 @@ vCSCE611_jtype_testbench
 R1
 R2
 !i10b 1
-!s100 <3QKohm]08h:cfVO@gAo]3
-I=@8GLP:X[a24KFCaGlS]B1
+!s100 PJ9DicOP1nV>gVEoAf1o30
+!s11b cZ:`d`H^zHFgMU_d^^z641
+I]TG=lNT6[6JL2K1J;`U=e3
 R3
-!s105 testbench_sv_unit
 S1
 R0
-w1575492964
+w1575577638
 8testbench.sv
 Ftestbench.sv
 L0 1
-R4
+R5
 r1
 !s85 0
 31
-R5
 R6
+R9
 R7
 !i113 1
 R8
@@ -82,22 +83,22 @@ vCSCE611_lab_jtype
 R1
 R2
 !i10b 1
-!s100 <186o;TdWgnm>c1ibA91N1
-IEl@S:;JYjan74eb2e2d3D3
+!s100 K83k=APAG2Qa40d8VJUL22
+!s11b 4j5iM_OXjcA@PRYfHH<Y73
+IATM^[heX0aHb[[LbYIB5?3
 R3
-!s105 CSCE611_lab_jtype_sv_unit
 S1
 R0
-w1573363292
+w1573681841
 8CSCE611_lab_jtype.sv
 FCSCE611_lab_jtype.sv
 L0 6
-R4
+R5
 r1
 !s85 0
 31
-R5
 R6
+R9
 R7
 !i113 1
 R8
@@ -106,22 +107,22 @@ vregfile
 R1
 R2
 !i10b 1
-!s100 UkhH2Q@@FMgLXF5:GO@6i3
-I`zPd<6F_2D4<BXEo[Mz0Y3
+!s100 `eeb:]53>1;jokfKT2L761
+!s11b L]WQHGEUDaCCAJNMm^bnS3
+IfGJUX;k<9QLE88:n0PXf@3
 R3
-!s105 regfile_sv_unit
 S1
 R0
-w1573090447
+R4
 8regfile.sv
 Fregfile.sv
 L0 3
-R4
+R5
 r1
 !s85 0
 31
-R5
 R6
+R9
 R7
 !i113 1
 R8

@@ -103,7 +103,9 @@ module cpu (
 		end
 	end
 	
-	
+	always_ff @(posedge clk, posedge rst) begin
+		stall_do <= stall_get;
+	end
 	
 	// assigns
 	assign op_instr = instr_ex[31:26];
@@ -121,9 +123,10 @@ module cpu (
 		gpio_we = 1'b0;
 		stall_get = 1'b0;
 		pc_src_do = 2'b0;
-		stall_do = 1'b0;
+		stall_get = 1'b0;
 		stall_instr = 1'b0;
 		if(~stall_do) begin
+			$display("instr: %h", instr_ex);
 			if(op_instr == 6'b000000) begin
 				if (funct == 6'b100000) begin // add
 					op = 4'b0100;
@@ -234,7 +237,7 @@ module cpu (
 					rdrt = rd;
 					regsel = 2'b01;
 				end else if (funct == 6'b001000) begin // jr
-					stall_do = 1'b1;
+					stall_get = 1'b1;
 					pc_src_do = 2'b10;
 				end
 			end else if (op_instr == 6'b001111) begin // lui
@@ -280,7 +283,7 @@ module cpu (
 				op = 4'b1100;
 				regsel = 2'b00;
 			end else if (op_instr == 6'b000010) begin // j
-				stall_do = 1'b1;
+				stall_get = 1'b1;
 				pc_src_do = 2'b11;
 			end else if (op_instr == 6'b000011) begin // jal
 				regwrite_EX = 1'b1;
@@ -289,27 +292,27 @@ module cpu (
 				alusrc = {{20{0}},instr_count+12'b1};
 				shamt = 5'b0;
 				op = 4'b1000;
-				stall_do = 1'b1;
+				stall_get = 1'b1;
 				pc_src_do = 2'b11;
 			end else if (op_instr == 6'b000101) begin // bne
 				op = 4'b0101; // sub
 				alusrc = b;
 				if(~zero) begin
-					stall_do = 1'b1;
+					stall_get = 1'b1;
 					pc_src_do = 2'b01;
 				end
 			end else if (op_instr == 6'b000100) begin // beq
 				op = 4'b0101; // sub
 				alusrc = b;
 				if(zero) begin
-					stall_do = 1'b1;
+					stall_get = 1'b1;
 					pc_src_do = 2'b01;
 				end
 			end else if (op_instr == 6'b000001) begin // bgez
 				op = 4'b1100;
 				alusrc = 32'b0;
 				if(zero) begin
-					stall_do = 1'b1;
+					stall_get = 1'b1;
 					pc_src_do = 2'b01;
 				end
 			end 

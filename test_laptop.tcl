@@ -8,9 +8,9 @@ echo "------ Compile Verilog Files ---------------------------------------------
 vlib work
 vlog *.sv
 echo "------ Load Design ------------------------------------------------------------"
-vsim work.CSCE611_ri_testbench
+vsim work.CSCE611_jtype_testbench
 echo "------ Setup Waves ------------------------------------------------------------"
-add wave -r /CSCE611_ri_testbench/*
+add wave -r /CSCE611_jtype_testbench/*
 echo "------ Simulate ---------------------------------------------------------------"
 run 50000
 # make sure the transcript window is visible
