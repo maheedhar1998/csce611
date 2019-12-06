@@ -72,7 +72,7 @@ module cpu (
 						.readdata1(a),
 						.readdata2(b));
 	initial begin
-		$readmemh("test.dat", instruction_yadh);
+		$readmemh("instmem.dat", instruction_yadh);
 	end
 	always_ff @(posedge clk, posedge rst) begin
 		if(rst) begin
