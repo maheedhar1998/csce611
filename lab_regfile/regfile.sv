@@ -21,8 +21,8 @@ module regfile (
 
 	/* your code here */
 	logic [31:0][31:0] mem;
-	assign readdata1 = (readaddr1 == 0) ? 0 : (writeaddr == 0 && we) ? 0 : (writeaddr == readaddr1 && we) ? writedata : mem[readaddr1];
-	assign readdata2 = (readaddr2 == 0) ? 0 : (writeaddr == 0 && we) ? 0 : (writeaddr == readaddr2 && we) ? writedata : mem[readaddr2];
+	assign readdata1 = (readaddr1 == 0) ? 0 : (writeaddr == readaddr1 && we) ? writedata : mem[readaddr1];
+	assign readdata2 = (readaddr2 == 0) ? 0 : (writeaddr == readaddr2 && we) ? writedata : mem[readaddr2];
 	always_ff @(posedge clk) begin
 		if (we) mem[writeaddr] <= writedata;
 	end

@@ -1,17 +1,3 @@
-# //  ModelSim SE-64 10.4b May 26 2015 Linux 4.15.0-52-generic
-# //
-# //  Copyright 1991-2015 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
-# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
-# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
-# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
-# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
-# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
-# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
-# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
-# //
 # do scripts/test.tcl
 # ==== CSCE611 regfile LabTest Script ===============================================
 # 
@@ -19,9 +5,119 @@
 # do scripts/test.tcl
 # 
 # ------ Compile Verilog Files --------------------------------------------------
-# Model Technology ModelSim SE-64 vlog 10.4b Compiler 2015.05 May 26 2015
-# Start time: 22:09:42 on Oct 24,2019
-# vlog -reportprogress 300 -novopt CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# Errors: 1, Warnings: 0
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./scripts/test.tcl line 8
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -novopt *.sv"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:48:19 on Dec 07,2019
+# vlog -reportprogress 300 CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
+# -- Compiling module CSCE611_lab_regfile
+# -- Compiling module alu
+# -- Compiling module cnt6
+# -- Compiling module hexdriver
+# -- Compiling module regfile
+# -- Compiling module rpncalc
+# ** Error: rpncalc.sv(53): Enum literal name 'pop' already exists.
+# ** Error: rpncalc.sv(53): Enum literal name 'pop_duece' already exists.
+# ** Error: rpncalc.sv(53): Enum literal name 'push' already exists.
+# ** Error (suppressible): rpncalc.sv(54): (vlog-2388) 'next' already declared in this scope (rpncalc) at rpncalc.sv(30).
+# -- Compiling module stack
+# -- Compiling module CSCE611_regfile_testbench
+# End time: 15:48:19 on Dec 07,2019, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./../test_laptop.tcl line 9
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog *.sv"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:53:37 on Dec 07,2019
+# vlog -reportprogress 300 CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
+# -- Compiling module CSCE611_lab_regfile
+# -- Compiling module alu
+# -- Compiling module cnt6
+# -- Compiling module hexdriver
+# -- Compiling module regfile
+# -- Compiling module rpncalc
+# ** Error (suppressible): rpncalc.sv(54): (vlog-2388) 'next' already declared in this scope (rpncalc) at rpncalc.sv(30).
+# -- Compiling module stack
+# -- Compiling module CSCE611_regfile_testbench
+# End time: 15:53:37 on Dec 07,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./../test_laptop.tcl line 9
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog *.sv"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:56:20 on Dec 07,2019
+# vlog -reportprogress 300 CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
+# -- Compiling module CSCE611_lab_regfile
+# -- Compiling module alu
+# -- Compiling module cnt6
+# -- Compiling module hexdriver
+# -- Compiling module regfile
+# -- Compiling module rpncalc
+# ** Error (suppressible): rpncalc.sv(116): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(130): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(141): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(152): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(163): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(174): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(185): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(196): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(207): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(218): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(229): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# ** Error (suppressible): rpncalc.sv(237): (vlog-12003) Variable 'dat' written by continuous and procedural assignments. See rpncalc.sv(55). 
+# -- Compiling module stack
+# -- Compiling module CSCE611_regfile_testbench
+# End time: 15:56:20 on Dec 07,2019, Elapsed time: 0:00:00
+# Errors: 12, Warnings: 0
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./../test_laptop.tcl line 9
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog *.sv"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 15:59:27 on Dec 07,2019
+# vlog -reportprogress 300 CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
 # -- Compiling module CSCE611_lab_regfile
 # -- Compiling module alu
 # -- Compiling module cnt6
@@ -35,130 +131,192 @@
 # 	CSCE611_lab_regfile
 # 	cnt6
 # 	CSCE611_regfile_testbench
-# End time: 22:09:42 on Oct 24,2019, Elapsed time: 0:00:00
+# End time: 15:59:27 on Dec 07,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # ------ Load Design ------------------------------------------------------------
-# vsim -novopt work.CSCE611_regfile_testbench 
-# Start time: 22:09:42 on Oct 24,2019
-# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# vsim work.CSCE611_jtype_testbench 
+# Start time: 15:59:27 on Dec 07,2019
+# ** Error: (vsim-3170) Could not find 'CSCE611_jtype_testbench'.
+#         Searched libraries:
+#             /home/maheedhar/csce611/lab_regfile/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./../test_laptop.tcl PAUSED at line 11
+do scripts/test.tcl
+# ==== CSCE611 regfile LabTest Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# ** Error (suppressible): (vlog-12110) The -novopt option has no effect on this product. -novopt option is now deprecated and will be removed in future releases.
+# Errors: 1, Warnings: 0
+# ** Error: /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+# Error in macro ./scripts/test.tcl line 8
+# /home/maheedhar/intelFPGA_pro/19.3/modelsim_ase/linuxaloem/vlog failed.
+#     while executing
+# "vlog -novopt *.sv"
+do ../test_laptop.tcl
+# ==== CSCE611 RI Lab Test Script ===============================================
+# 
+# TIP: you can run this test again without re-starting modelsim using the command
+# do scripts/test.tcl
+# 
+# ------ Compile Verilog Files --------------------------------------------------
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2019.2 Compiler 2019.04 Apr 17 2019
+# Start time: 16:00:34 on Dec 07,2019
+# vlog -reportprogress 300 CSCE611_lab_regfile.sv alu.sv cnt6.sv hexdriver.sv regfile.sv rpncalc.sv stack.sv testbench.sv 
+# -- Compiling module CSCE611_lab_regfile
+# -- Compiling module alu
+# -- Compiling module cnt6
+# -- Compiling module hexdriver
+# -- Compiling module regfile
+# -- Compiling module rpncalc
+# -- Compiling module stack
+# -- Compiling module CSCE611_regfile_testbench
+# 
+# Top level modules:
+# 	CSCE611_lab_regfile
+# 	cnt6
+# 	CSCE611_regfile_testbench
+# End time: 16:00:34 on Dec 07,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ------ Load Design ------------------------------------------------------------
+# vsim work.CSCE611_regfile_testbench 
+# Start time: 15:59:27 on Dec 07,2019
 # Loading sv_std.std
 # Loading work.CSCE611_regfile_testbench
 # Loading work.rpncalc
 # Loading work.stack
 # Loading work.regfile
 # Loading work.alu
-# ** Warning: (vsim-3017) stack.sv(8): [TFMPC] - Too few port connections. Expected 9, found 8.
-#    Time: 0 ns  Iteration: 0  Instance: /CSCE611_regfile_testbench/abacus/dStack/stackregs File: regfile.sv
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'stackregs'.  Expected 9, found 8.
+#    Time: 0 ps  Iteration: 0  Instance: /CSCE611_regfile_testbench/rpn/dStack/stackregs File: stack.sv Line: 8
 # ** Warning: (vsim-3722) stack.sv(8): [TFMPC] - Missing connection for port 'rst'.
 # ------ Setup Waves ------------------------------------------------------------
 # ------ Simulate ---------------------------------------------------------------
-# xxxx, xxxx
-# 0000, xxxx
-# 0001, 0000
-# 0002, 0001
-# dead, 0002
-# b00b, dead
-# dead, 0002
-# 0001, 0000
-# 0000, 0000
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, deaf
-# dead, xxxx
-# 0001, 0000
-# 0000, 0000
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# dead, xxxx
-# 0001, 0000
-# 0000, 0000
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# dead, xxxx
-# dead, xxxx
-# 0001, 0000
-# 0000, 0000
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# dead, xxxx
-# 0001, 0000
-# 0000, 0000
-# 0000, 0000
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# xxxx, xxxx
-# dead, xxxx
-# 0001, 0000
-# 0000, 0000
-# xxxx, xxxx
-# xxxx, xxxx
-# ** Note: $stop    : testbench.sv(32)
-#    Time: 900 ns  Iteration: 0  Instance: /CSCE611_regfile_testbench
-# Break in Module CSCE611_regfile_testbench at testbench.sv line 32
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/librt.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libdl.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libm.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libpthread.so.0 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libc.so.6 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/ld-linux.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_compat.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_nis.so.2 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnsl.so.1 : module was loaded at an absolute address.
+# ** Warning: (vsim-3116) Problem reading symbols from /lib/i386-linux-gnu/libnss_files.so.2 : module was loaded at an absolute address.
+# current bd00000000xxxx
+# current 8f00000000xxxx
+# current 87000200020000
+# current 8f000000020000
+# current 87000400040002
+# current 8f000000040002
+# current 87000a000a0004
+# current 8f0000000a0004
+# current 8b000000040002
+# current 8f000000040002
+# current 8d000000000000
+# current 8f000000060000
+# i  11
+# Error top 0002
+# top_e 0006
+# current 87000400040006
+# i  12
+# Error next 0002
+# next_e 0006
+# current 8f000000040006
+# i  13
+# Error next 0002
+# next_e 0006
+# current 8e000000000000
+# current 8f0000fffe0000
+# i  15
+# Error top 0002
+# top_e fffe
+# current 8700030003fffe
+# i  16
+# Error next 0002
+# next_e fffe
+# current 8f00000003fffe
+# i  17
+# Error next 0002
+# next_e fffe
+# current 9b000000000000
+# current 8f0000fff00000
+# i  19
+# Error top 0000
+# top_e fff0
+# current 8700020002fff0
+# i  20
+# Error next 0000
+# next_e fff0
+# current 8f00000002fff0
+# i  21
+# Error next 0000
+# next_e fff0
+# current 9d000000000000
+# current 8f0000fffc0000
+# i  23
+# Error top 0000
+# top_e fffc
+# current 8700080008fffc
+# i  24
+# Error next 0000
+# next_e fffc
+# current 8f00000008fffc
+# i  25
+# Error next 0000
+# next_e fffc
+# current 97000000000000
+# current 8f0000ffe00000
+# i  27
+# Error top 0000
+# top_e ffe0
+# current 8700050005ffe0
+# i  28
+# Error next 0000
+# next_e ffe0
+# current 8f00000005ffe0
+# i  29
+# Error next 0000
+# next_e ffe0
+# current 9e000000000000
+# current 8f000000000000
+# current 87000100010000
+# current 8f000000010000
+# current a7000000000000
+# current 8f000000000000
+# current 87000100010000
+# current 8f000000010000
+# current ab000000010000
+# current 8f000000010000
+# current 87000100010001
+# current 8f000000010001
+# current ad000000000000
+# current 8f000000010000
+# current 87000000000001
+# current 8f000000000001
+# current ae000000000000
+# current 8f0000fffe0000
+# current 8b000000000000
+# current 8f000000000000
+# current 87000600060000
+# current 8f000000060000
+# current 87000900090006
+# current 8f000000090006
+# current c7000000000009
+# current 8f000000000009
+# current 8b000000090006
+# ** Note: $stop    : testbench.sv(66)
+#    Time: 5 ns  Iteration: 0  Instance: /CSCE611_regfile_testbench
+# Break in Module CSCE611_regfile_testbench at testbench.sv line 66
 # .main_pane.transcript.interior.cs.body.t
 # .main_pane.wave.interior.cs.body.pw.wf
-# 0 ns
-# 945 ns
+# 0 ps
+# 5250 ps
 # ------ Done -------------------------------------------------------------------
 # Design compiled and simulated successfully! (hint: this does not mean
 # your design is functionally correct, only that it is syntactically 
@@ -168,5 +326,5 @@
 # following command:
 # 
 # do ./scripts/test.tcl
-# End time: 01:32:42 on Oct 25,2019, Elapsed time: 3:23:00
-# Errors: 0, Warnings: 3
+# End time: 16:40:58 on Dec 07,2019, Elapsed time: 0:41:31
+# Errors: 1, Warnings: 12

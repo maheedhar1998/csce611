@@ -7,6 +7,7 @@ module CSCE611_jtype_testbench;
 	logic [67:0] vectors [524299:0];
 	logic [67:0] curr;
 	logic [19:0] i;
+	logic [31:0] diff;
 	
 	always begin
 		clk = 1'b0;
@@ -25,7 +26,15 @@ module CSCE611_jtype_testbench;
 			gpio_in = curr[63:32];
 			gpio_exp = curr[31:0];
 			if(~rst) begin
-			   #10000;
+			   #4500;
+				diff = gpio_out-gpio_exp;
+				if(diff[31] == 1'b1) diff = -diff;
+				$display("%h", diff);
+				if(diff < 32'hb) begin
+					$display("success found sqrt");
+				end else if(diff > 32'ha) begin
+					$display("ERROR: got: %h expected: %h", gpio_out, gpio_exp);
+				end
 			end else if (rst) begin
 				#10;
 			end

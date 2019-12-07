@@ -1,32 +1,34 @@
 .text
+  li $4,0x64
   sra $4,$4,0 # GPIO Read
   ori $3,$zero,256 # step
   sll $3,$3,14 # step fixed pt
   li $2,0 # x
   sll $4,$4,14
   li $11,100000
+  beqz $4,retZero
   #sll $11,$11,14
   loop:
-    mult $2,$2 # X^2
+    multu $2,$2 # X^2
     mflo $5 # move from lo
     srl $5,$5,14 # gets rid of extra precision in lo
     mfhi $10 # move from hi
     sll $10,$10,18 # gets rid of overflow in hi
     or $5,$10,$5
-    sub $6,$5,$4 # x^2-s (val)
+    subu $6,$5,$4 # x^2-s (val)
     slt $7,$6,$zero # val<0
     bne $7,$zero,stepUp # if(val<0)
-    sub $2,$2,$3 # x=x-step
+    subu $2,$2,$3 # x=x-step
     srl $3,$3,1 # step=step/2
     j stepCheck
   stepUp:
-    add $2,$2,$3 # x=x+step
+    addu $2,$2,$3 # x=x+step
     srl $3,$3,1 # step=step/2
     j stepCheck
   stepCheck:
     bne $3,$zero,loop
     or $8,$zero,$2
-    mult $8,$11
+    multu $8,$11
     mflo $8
     mfhi $12
     sll $12,$12,18
@@ -115,3 +117,9 @@
 	or	$6,$6,$5
 				# insert srl here to output register 6 to hex displays
 	srl $6,$6,0
+	j end
+  retZero:
+    ori $8,$zero,0
+    j oneMore
+  end:
+  

@@ -1,34 +1,70 @@
 module CSCE611_regfile_testbench;
-	logic [0:0] clk;
-	logic [0:0] rst;
-	logic [17:0] SW;
-	logic [15:0] top;
-	logic [15:0] two;
-	logic [7:0] count;
-	logic [3:0] KEY;
-	logic [23:0] vectors [99:0]; // 1e2 24 bit test vectors
-	logic [23:0] current; // current test vector
+
+	logic clk;
+	logic rst;
+	logic enable;
+	logic [15:0] top, next;
+	logic [15:0] top_e, next_e;
+	logic [3:0 ] key;
+	logic [1:0 ] mode;
+	logic [15:0] val;
+	logic [7:0 ] counter;
+
+	logic [55:0] vectors [99:0]; // 1e2 56 bit test vectors
+	logic [55:0] current; // current test vector
 	logic [6:0] i; //vector subscript
 
 	always begin
-		clk = 1'b1;
-		#5;
-		clk = 1'b0;
-		#5;
+		clk = 1'b1; #5;
+		clk = 1'b0; #5;
 	end
-	assign rst = {SW[17:16], KEY} == 6'b11_1101 ? 1'b1 : 1'b0;
-	rpncalc abacus(.clk(clk), .rst(rst), .mode(SW[17:16]), .key(KEY), .val(SW[15:0]), .top(top), .next(two), .counter(count));
+	
+	assign rst=({mode,key} == 6'b11_1101) ? 1'b1 : 1'b0;
+
+	rpncalc rpn(.clk(clk),
+			.rst(rst),
+			.mode(mode),
+			.key(key),
+			.val(val),
+			.top(top),
+			.next(next),
+			.counter(counter));
+
 	initial begin
-		$readmemh("vectors.dat", vectors);
+		// load test vectors from disk
+		$readmemh("vectors.dat",vectors);
+
 		for (i = 0; i < 100; i = i + 1) begin
+
 			current = vectors[i];
-			SW[17:16] = current[21:20];
-			SW[15:0] = current[19:4];
-			KEY = current[3:0];
-			$display("%h, %h", top, two);
-			#9;
-		end // initial begin
+			
+			enable = current[55:55];
+			mode = current[53:52];
+			key = current[51:48];
+			val = current[47:32];
+			top_e = current[31:16];
+			next_e = current[15:0];
+			#50;
+
+			if(enable) begin
+				$display("current %h",current);
+				if (top != top_e) begin
+					$display("i %d", i);
+					$display("Error top %h", top);
+					$display("top_e %h",top_e);
+				end
+				if (next != next_e) begin
+					$display("i %d", i);
+					$display("Error next %h", next);
+					$display("next_e %h",next_e);
+				end
+			end
+
+		end // for (i = 0; i < 1000; i++) begin
+
 		// tell the simulator we're done
 		$stop();
-	end
+
+	end // initial begin
+
 endmodule

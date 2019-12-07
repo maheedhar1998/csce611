@@ -85,7 +85,7 @@ module cpu (
 			else if (pc_src_do == 2'b01) instr_count <= instr_count + instr_ex[11:0];
 			else if (pc_src_do == 2'b10) instr_count <= a[11:0];
 			else if (pc_src_do == 2'b11) instr_count <= instr_ex[11:0];
-			$display("instr count: %d, instr: %b, instr offset: %d", instr_count, pc_src_do, stall_instr);
+			// $display("instr count: %d, instr: %b, instr offset: %d", instr_count, pc_src_do, stall_instr);
 		end
 	end
 	// pipeline registers
@@ -126,7 +126,7 @@ module cpu (
 		stall_get = 1'b0;
 		stall_instr = 1'b0;
 		if(~stall_do) begin
-			$display("instr: %h", instr_ex);
+			// $display("instr: %h", instr_ex);
 			if(op_instr == 6'b000000) begin
 				if (funct == 6'b100000) begin // add
 					op = 4'b0100;

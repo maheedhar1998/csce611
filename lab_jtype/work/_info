@@ -11,7 +11,7 @@ cModel Technology
 Z0 d/home/maheedhar/csce611/lab_jtype
 valu
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1575595632
+Z2 !s110 1575755248
 !i10b 1
 !s100 4?zJM_AN470_V17KGdBn[2
 !s11b Sj:Z5>h3I6`lagaNk=95C0
@@ -27,7 +27,7 @@ Z5 OV;L;2019.2;69
 r1
 !s85 0
 31
-Z6 !s108 1575595632.000000
+Z6 !s108 1575755248.000000
 !s107 testbench.sv|regfile.sv|cpu.sv|alu.sv|CSCE611_lab_jtype.sv|
 Z7 !s90 -reportprogress|300|CSCE611_lab_jtype.sv|alu.sv|cpu.sv|regfile.sv|testbench.sv|
 !i113 1
@@ -36,13 +36,13 @@ vcpu
 R1
 R2
 !i10b 1
-!s100 UojZog<MLz;5A3POHKeRf0
-!s11b LhhTQdJnh1M^_1=AhP5ZN2
-IcYPTUO:<z0EGOO9ibOkG;1
+!s100 @X5fdzH8TX[oMnMWg@j3Z0
+!s11b lN^e8_QoA0GSX:Ve?j<0g1
+I5c0=dY^4FZdPeIQL:dX>:1
 R3
 S1
 R0
-w1575595332
+w1575679391
 8cpu.sv
 Fcpu.sv
 L0 3
@@ -59,13 +59,13 @@ vCSCE611_jtype_testbench
 R1
 R2
 !i10b 1
-!s100 7@m=:[?C^b@fbU9`VPB9g2
-!s11b OUH]P]`F?ozgjR6CJYMnB0
-I`7;i0kCVVI6O2TdjDMVRm0
+!s100 MQ4VMfC7F<1iGc2N2lQ^Y2
+!s11b jfSU00If<LVJ<eBTbgL4R2
+IVTiRk4In8M=d^J^0KXF2R3
 R3
 S1
 R0
-w1575595523
+w1575681050
 8testbench.sv
 Ftestbench.sv
 L0 1
