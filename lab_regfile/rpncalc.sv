@@ -50,7 +50,7 @@ module rpncalc (
 	logic [31:0] high;
 	logic [31:0] low;
 	logic [0:0] zero;
-	typedef enum logic [3:0] {idle, pop, pop_duece, push, push_duece} state;
+	typedef enum logic [4:0] {idle, pop, pop_duece, push, push_duece} state;
 	state current, nxt;
 	assign command = &key_pichle2 & ~&key_pichle;
 	stack dStack(.clk(clk), .rst(rst), .pop(popf), .pop_duece(pop_duecef), .push(pushf), .data_in(dat), .stackCounter(counter),

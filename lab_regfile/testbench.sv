@@ -4,15 +4,15 @@ module CSCE611_regfile_testbench;
 	logic rst;
 	logic enable;
 	logic [15:0] top, next;
-	logic [15:0] top_e, next_e;
+	logic [15:0] top_exp, next_exp;
 	logic [3:0 ] key;
 	logic [1:0 ] mode;
 	logic [15:0] val;
-	logic [7:0 ] counter;
+	logic [7:0 ] count;
 
-	logic [55:0] vectors [99:0]; // 1e2 56 bit test vectors
-	logic [55:0] current; // current test vector
-	logic [6:0] i; //vector subscript
+	logic [55:0] vectors [79:0]; 
+	logic [55:0] current;
+	logic [6:0] i; 
 
 	always begin
 		clk = 1'b1; #5;
@@ -28,7 +28,7 @@ module CSCE611_regfile_testbench;
 			.val(val),
 			.top(top),
 			.next(next),
-			.counter(counter));
+			.counter(count));
 
 	initial begin
 		// load test vectors from disk
@@ -42,25 +42,23 @@ module CSCE611_regfile_testbench;
 			mode = current[53:52];
 			key = current[51:48];
 			val = current[47:32];
-			top_e = current[31:16];
-			next_e = current[15:0];
+			top_exp = current[31:16];
+			next_exp = current[15:0];
 			#50;
 
 			if(enable) begin
 				$display("current %h",current);
-				if (top != top_e) begin
-					$display("i %d", i);
-					$display("Error top %h", top);
-					$display("top_e %h",top_e);
+				if (top != top_exp) begin
+					$display("Error Top %h", top);
+					$display("Top Expected %h",top_exp);
 				end
-				if (next != next_e) begin
-					$display("i %d", i);
-					$display("Error next %h", next);
-					$display("next_e %h",next_e);
+				if (next != next_exp) begin
+					$display("Error Next %h", next);
+					$display("Next Expected %h",next_exp);
 				end
 			end
 
-		end // for (i = 0; i < 1000; i++) begin
+		end 
 
 		// tell the simulator we're done
 		$stop();
